@@ -57,6 +57,8 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'Aljabar_Matriks';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -138,7 +140,7 @@
 
   
 
-<a class="navbar-brand logo" href="welcome.html">
+<a class="navbar-brand logo" href="intro.html">
   
   
   
@@ -149,8 +151,8 @@
       
     
     
-    <img src="_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
-    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+    <img src="_static/bunga.jpg" class="logo__image only-light" alt="My sample book - Home"/>
+    <script>document.write(`<img src="_static/bunga.jpg" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
   
   
 </a></div>
@@ -170,15 +172,14 @@
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
-                <a class="reference internal" href="welcome.html">
+                <a class="reference internal" href="intro.html">
                     Welcome to Yasmin’s Jupyter Book
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Aljabar Matriks</a></li>
-
-
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="markdown.html">Markdown Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="markdown-notebooks.html">Notebooks with MyST Markdown</a></li>
 </ul>
 
     </div>
@@ -374,26 +375,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Aljabar Matriks</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#berikut-contoh-matriks">Berikut Contoh Matriks</a></li>
 </ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#begin-align-a-b-begin-bmatrix-2-2-3-4-2-7-4-6-1-3-3-2-1-5-2-2-2-7-end-bmatrix">\begin{align*}
-A + B =
-\begin{bmatrix}
-2+2&amp;3+4&amp;2+7\
-4+6&amp;1+(-3)&amp;-3+2\
--1+5&amp;-2+(-2)&amp;2+7
-\end{bmatrix}</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">\begin{align*}
-A - B =
-\begin{bmatrix}
-2-2&amp;3-4&amp;2-7\
-4-6&amp;1-(-3)&amp;-3-2\
--1-5&amp;-2-(-2)&amp;2-7
-\end{bmatrix}</a></li>
-</ul>
-
             </nav>
         </div>
     </div>
@@ -411,28 +394,31 @@ A - B =
 Matriks adalah susunan bilagan real(atau elemen-elemen) yang disusun dalam baris dan kolom sehingga membentuk persegi ataupun persegi panjang. Setiap elemen memiliki posisi unik dalam matriks, ditentukan oleh baris dan kolomnya. Misalnya, matriks 2x3 memiliki 2 baris dan 3 kolom. suatu matriks biasa diberi nama dengan menggunakan huruf kapital (seperti A, B dll) dan elemennya dinyatakan dengan huruf kecil.</p>
 <section id="berikut-contoh-matriks">
 <h2>Berikut Contoh Matriks<a class="headerlink" href="#berikut-contoh-matriks" title="Link to this heading">#</a></h2>
-<p>\begin{align*}
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
 A=
 \begin{bmatrix}
-2&amp;3&amp;2\
-4&amp;1&amp;-3\
+2&amp;3&amp;2\\
+4&amp;1&amp;-3\\
 -1&amp;-2&amp;2
 \end{bmatrix}
 &amp;&amp;
 B=
 \begin{bmatrix}
-2&amp;4&amp;7\
-6&amp;-3&amp;2\
+2&amp;4&amp;7\\
+6&amp;-3&amp;2\\
 5&amp;-2&amp;7
 \end{bmatrix}
 &amp;&amp;
 C=
 \begin{bmatrix}
-3&amp;4\
--2&amp;4\
+3&amp;4\\
+-2&amp;4\\
 2&amp;5
 \end{bmatrix}
-\end{align*}</p>
+\end{align*}
+\end{split}\]</div>
 <p>#Operasi pada Matriks
 Operasi matriks adalah serangkaian operasi atau tindakan yang dilakukan pada matriks, baik itu untuk mengubah matriks ataupun menggabungkan matriks. Berikut beberapa operasi matriks yang sering digunakan:</p>
 <div class="cell docutils container">
@@ -487,38 +473,42 @@ C=
 </ol>
 <p>##1.Penjumlahan matriks :</p>
 <p>Operasi ini melibatkan penambahan elemen-elemen yang berada pada posisi yang sama dari dua matriks yang memiliki ordo yang sama. Artinya kedua matriks ini harus memiliki baris dan kolom yang sama.</p>
-<p>CONTOH PENJUMLAHAN MATRIKS A + B :
+<p>CONTOH PENJUMLAHAN MATRIKS A + B :</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 \begin{align*}
 A=
 \begin{bmatrix}
-2&amp;3&amp;2\
-4&amp;1&amp;-3\
+2&amp;3&amp;2\\
+4&amp;1&amp;-3\\
 -1&amp;-2&amp;2
 \end{bmatrix}
 &amp;&amp;
 B=
 \begin{bmatrix}
-2&amp;4&amp;7\
-6&amp;-3&amp;2\
+2&amp;4&amp;7\\
+6&amp;-3&amp;2\\
 5&amp;-2&amp;7
 \end{bmatrix}
-\end{align*}</p>
-</section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="begin-align-a-b-begin-bmatrix-2-2-3-4-2-7-4-6-1-3-3-2-1-5-2-2-2-7-end-bmatrix">
-<h1>\begin{align*}
+\end{align*}
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
 A + B =
 \begin{bmatrix}
-2+2&amp;3+4&amp;2+7\
-4+6&amp;1+(-3)&amp;-3+2\
+2+2&amp;3+4&amp;2+7\\
+4+6&amp;1+(-3)&amp;-3+2\\
 -1+5&amp;-2+(-2)&amp;2+7
-\end{bmatrix}<a class="headerlink" href="#begin-align-a-b-begin-bmatrix-2-2-3-4-2-7-4-6-1-3-3-2-1-5-2-2-2-7-end-bmatrix" title="Link to this heading">#</a></h1>
-<p>\begin{bmatrix}
-4&amp;7&amp;9\
-10&amp;-2&amp;-1\
+\end{bmatrix}
+=
+\begin{bmatrix}
+4&amp;7&amp;9\\
+10&amp;-2&amp;-1\\
 4&amp;-4&amp;9
 \end{bmatrix}
-\end{align*}</p>
+\end{align*}
+\end{split}\]</div>
 <p>BERIKUT CODE PENJUMLAHAN MATRIKS DENGAN MENGGUNAKAN ATAU MEMANGGIL LIBRARY NUMPY:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -550,36 +540,41 @@ Sifat di atas merupakan sifat komutatif karena A+B = B+A
 <p>##2.Pengurangan Matriks:</p>
 <p>Operasi ini melibatkan pengurangan elemen-elemen yang berada pada posisi yang sama dari dua matriks yang memiliki ordo yang sama. Artinya kedua matriks ini harus memiliki baris dan kolom yang sama.</p>
 <p>CONTOH PENGURANGAN MATRIKS:</p>
-<p>\begin{align*}
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
 A=
 \begin{bmatrix}
-2&amp;3&amp;2\
-4&amp;1&amp;-3\
+2&amp;3&amp;2\\
+4&amp;1&amp;-3\\
 -1&amp;-2&amp;2
 \end{bmatrix}
 &amp;&amp;
 B=
 \begin{bmatrix}
-2&amp;4&amp;7\
-6&amp;-3&amp;2\
+2&amp;4&amp;7\\
+6&amp;-3&amp;2\\
 5&amp;-2&amp;7
 \end{bmatrix}
-\end{align*}</p>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="id1">
-<h1>\begin{align*}
+\end{align*}
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
 A - B =
 \begin{bmatrix}
-2-2&amp;3-4&amp;2-7\
-4-6&amp;1-(-3)&amp;-3-2\
+2-2&amp;3-4&amp;2-7\\
+4-6&amp;1-(-3)&amp;-3-2\\
 -1-5&amp;-2-(-2)&amp;2-7
-\end{bmatrix}<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
-<p>\begin{bmatrix}
-0&amp;-1&amp;-5\
--2&amp;4&amp;-5\
+\end{bmatrix}
+=
+\begin{bmatrix}
+0&amp;-1&amp;-5\\
+-2&amp;4&amp;-5\\
 -6&amp;-0&amp;-5
 \end{bmatrix}
-\end{align*}</p>
+\end{align*}
+\end{split}\]</div>
 <p>BERIKUT CODE PERKALIAN MATRIKS DENGAN MENGGUNAKAN ATAU MEMANGGIL LIBRARY NUMPY:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -611,37 +606,46 @@ Sifat di BUKAN merupakan sifat komutatif karena A-B TIDAK SAMA DENGAN B-A
 <p>##3.Perkalian Matriks:</p>
 <p>Operasi ini melibatkan perkalian elemen-elemen matriks. Untuk melakukan perkalian matriks A dan B, jumlah kolom dalam matriks A harus sama dengan jumlah baris dalam matriks B. Contoh matriks A memiliki ordo atau ukuran mxn, maka matriks B harus memiliki ordo atau ukuran nxp. Sehingga hasil dari perkalian tersebut akan menghasilkan matriks baru dengan ukuran mxp. Hasilnya akan memiliki jumlah baris yang sama dengan matriks A dan jumlah kolom yang sama dengan matriks B.</p>
 <p>CONTOH PERKALIAN MATRIKS:</p>
-<p>\begin{align*}
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
 A=
 \begin{bmatrix}
-2&amp;3&amp;2\
-4&amp;1&amp;-3\
+2&amp;3&amp;2\\
+4&amp;1&amp;-3\\
 -1&amp;-2&amp;2
 \end{bmatrix}
 &amp;&amp;
 B=
 \begin{bmatrix}
-2&amp;4&amp;7\
-6&amp;-3&amp;2\
+2&amp;4&amp;7\\
+6&amp;-3&amp;2\\
 5&amp;-2&amp;7
 \end{bmatrix}
-\end{align*}</p>
-<p>\begin{align*}
+\end{align*}
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
 A X B =
 \begin{bmatrix}
-2(2)+3(6)+2(5) &amp;2(4)+3(-3)+2(-2)&amp;2(7)+3(2)+2(7)\
-4(2)+1(6)+(-3)(5) &amp;4(4)+1(-3)+(-3)(-2) &amp;4(7)+1(2)+(-3)(7)\
+2(2)+3(6)+2(5) &amp;2(4)+3(-3)+2(-2)&amp;2(7)+3(2)+2(7)\\
+4(2)+1(6)+(-3)(5) &amp;4(4)+1(-3)+(-3)(-2) &amp;4(7)+1(2)+(-3)(7)\\
 -1(2)+(-2)(6)+2(5) &amp;-1(4)+(-2)(-3)+2(-2) &amp;-1(7)+(-2)(2)+2(7)
 \end{bmatrix}
-\end{align*}</p>
-<p>\begin{align*}
+\end{align*}
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
 AB=
 \begin{bmatrix}
-32&amp;-5&amp;34\
--1&amp;19&amp;9\
+32&amp;-5&amp;34\\
+-1&amp;19&amp;9\\
 -4&amp;-2&amp;3
 \end{bmatrix}
-\end{align*}</p>
+\end{align*}
+\end{split}\]</div>
 <p>BERIKUT CODE PERKALIAN MATRIKS DENGAN MENGGUNAKAN ATAU MEMANGGIL LIBRARY NUMPY:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -746,14 +750,17 @@ A(cB)=
 <li><p>Perkalian identitas:</p></li>
 </ul>
 <p>Dalam operasi perkalian ini, matriks dikalikan dengan matriks identitas. Dimana matriks identitas merupakan matriks persegi yang memiliki semua elemen di luar diagonal utama bernilai 1, dan elemen di luar diagonal utama bernilai 0. Matriks identitas dilambangkan dengan I. Contoh :</p>
-<p>\begin{align*}
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
 I=
 \begin{bmatrix}
-1&amp;0&amp;0\
-0&amp;1&amp;0\
+1&amp;0&amp;0\\
+0&amp;1&amp;0\\
 0&amp;0&amp;1
 \end{bmatrix}
-\end{align*}</p>
+\end{align*}
+\end{split}\]</div>
 <p>AI = IA = A</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -818,20 +825,23 @@ BA=
 <p>##4.Transpose Matriks</p>
 <p>Transpose matriks adalah matriks baru yang diperoleh dengan cara menukar elemen-elemen baris menjadi elemen kolom atau sebaliknya. Jika sebuah matriks berukuran M X N, maka transpose matriks tersebut memiliki ordo N X M.</p>
 <p>CONTOH TRANSPOSE MATRIKS:</p>
-<p>\begin{align*}
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
 C=
 \begin{bmatrix}
-3&amp;4\
--2&amp;4\
+3&amp;4\\
+-2&amp;4\\
 2&amp;5
 \end{bmatrix}
 &amp;&amp;
 CT (C Transposre)=
 \begin{bmatrix}
-3&amp;-2&amp;2\
+3&amp;-2&amp;2\\
 4&amp;4&amp;-5
 \end{bmatrix}
-\end{align*}</p>
+\end{align*}
+\end{split}\]</div>
 <p>BERIKUT CODE UNTUK MENG-TRANSPOSE MATRIKS DENGAN MENGGUNAKAN ATAU MEMANGGIL LIBRARY NUMPY:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1065,6 +1075,7 @@ matriks 1=([[2,4,7],[6,-3,2],[5,-2,7]])’</p></li>
 </ol>
 <p>Dengan penjelasan diatas dapat menunjukkan bahwa jika kita menggunakan perulangan untuk melakukan perkalian matriks tidaklah praktis. jadi akan lebih mudah jika kita memanggil (menggunakan) library Numpy. Karena selain lebih sederhana juga mengirit baris pada code dan waktu yang digunakan lebih sedikit.</p>
 </section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1121,26 +1132,8 @@ matriks 1=([[2,4,7],[6,-3,2],[5,-2,7]])’</p></li>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Aljabar Matriks</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#berikut-contoh-matriks">Berikut Contoh Matriks</a></li>
 </ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#begin-align-a-b-begin-bmatrix-2-2-3-4-2-7-4-6-1-3-3-2-1-5-2-2-2-7-end-bmatrix">\begin{align*}
-A + B =
-\begin{bmatrix}
-2+2&amp;3+4&amp;2+7\
-4+6&amp;1+(-3)&amp;-3+2\
--1+5&amp;-2+(-2)&amp;2+7
-\end{bmatrix}</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">\begin{align*}
-A - B =
-\begin{bmatrix}
-2-2&amp;3-4&amp;2-7\
-4-6&amp;1-(-3)&amp;-3-2\
--1-5&amp;-2-(-2)&amp;2-7
-\end{bmatrix}</a></li>
-</ul>
-
   </nav></div>
 
 </div></div>
