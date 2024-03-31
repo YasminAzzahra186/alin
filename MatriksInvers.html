@@ -573,8 +573,10 @@ A=
 \end{split}\]</div>
 <p>Berikut penyelesaian menggunakan Eliminasi Gauss Jordan Elimination:</p>
 <ol class="arabic simple">
-<li><p>Bagilah baris 1 dengan 6 [R1 = (1/6) R1]
-$<span class="math notranslate nohighlight">\(
+<li><p>Bagilah baris 1 dengan 6 [R1 = (1/6) R1]</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 \begin{equation*}
 A=
 \begin{bmatrix}
@@ -582,9 +584,12 @@ A=
 8&amp;10&amp; | &amp;0&amp;1
 \end{bmatrix}
 \end{equation*}
-\)</span>$</p></li>
-<li><p>[R2 = R2 - 8R1]
-$<span class="math notranslate nohighlight">\(
+\end{split}\]</div>
+<ol class="arabic simple" start="2">
+<li><p>[R2 = R2 - 8R1]</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 \begin{equation*}
 A=
 \begin{bmatrix}
@@ -592,9 +597,12 @@ A=
 0&amp;10/3&amp; | &amp;-4/3&amp;1
 \end{bmatrix}
 \end{equation*}
-\)</span>$</p></li>
-<li><p>[R2 = (3/10)R2]
-$<span class="math notranslate nohighlight">\(
+\end{split}\]</div>
+<ol class="arabic simple" start="3">
+<li><p>[R2 = (3/10)R2]</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 \begin{equation*}
 A=
 \begin{bmatrix}
@@ -602,9 +610,12 @@ A=
 0&amp;1&amp; | &amp;-2/5&amp;3/10
 \end{bmatrix}
 \end{equation*}
-\)</span>$</p></li>
-<li><p>[R1 = R1 - (5/6)R2]
-$<span class="math notranslate nohighlight">\(
+\end{split}\]</div>
+<ol class="arabic simple" start="4">
+<li><p>[R1 = R1 - (5/6)R2]</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 \begin{equation*}
 A=
 \begin{bmatrix}
@@ -612,8 +623,7 @@ A=
 0&amp;1&amp; | &amp;-2/5&amp;3/10
 \end{bmatrix}
 \end{equation*}
-\)</span>$</p></li>
-</ol>
+\end{split}\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -680,8 +690,9 @@ a + 4b - 2c + 3d + e + 2f = 30\\
 a + 3b + 2c + 4d - e + 3f = 50\\
 2a + 2b - 3c + d - 4e + 2f = 60\\
 \end{split}\]</div>
-<p>Matriks augmented dari sistem persamaan ini :
-$<span class="math notranslate nohighlight">\(
+<p>Matriks augmented dari sistem persamaan ini :</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 \begin{bmatrix}
 3 &amp; 2 &amp; -1 &amp; 4 &amp; -5 &amp; 6 &amp;|&amp; 10\\
 2 &amp; -1 &amp; 3 &amp; 4 &amp; -2 &amp; 5 &amp;|&amp; 20\\
@@ -690,7 +701,7 @@ $<span class="math notranslate nohighlight">\(
 1 &amp; 3 &amp; 2 &amp; 4 &amp; -1 &amp; 3 &amp;|&amp; 50\\
 2 &amp; 2 &amp; -3 &amp; 1 &amp; -4 &amp; 2 &amp;|&amp; 60\\
 \end{bmatrix}
-\)</span>$</p>
+\end{split}\]</div>
 <p>Menulis matriks augemented:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -704,9 +715,11 @@ $<span class="math notranslate nohighlight">\(
 \end{bmatrix}
 \end{split}\]</div>
 <p>Berikut penyelesaian dari matriks di atas menggunakan guss jordan:</p>
-<ol class="arabic">
-<li><p>Tukar kolom 1 dengan kolom 3
-$<span class="math notranslate nohighlight">\(
+<ol class="arabic simple">
+<li><p>Tukar kolom 1 dengan kolom 3</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 \begin{bmatrix}
 1 &amp; 4 &amp; -2 &amp; 3 &amp; 1 &amp; 2 &amp; | &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 \\
 2 &amp; -1 &amp; 3 &amp; 4 &amp; -2 &amp; 5 &amp; | &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
@@ -715,9 +728,12 @@ $<span class="math notranslate nohighlight">\(
 1 &amp; 3 &amp; 2 &amp; 4 &amp; -1 &amp; 3  &amp; | &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 \\
 2 &amp; 2 &amp; -3 &amp; 1 &amp; -4 &amp; 2 &amp; | &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 \
 \end{bmatrix}
-\)</span>$</p></li>
-<li><p>[R2 = R2 - 2 R1]
-$<span class="math notranslate nohighlight">\(
+\end{split}\]</div>
+<ol class="arabic simple" start="2">
+<li><p>[R2 = R2 - 2 R1]</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 \begin{bmatrix}
 1 &amp; 4 &amp; -2 &amp; 3 &amp; 1 &amp; 2 &amp; | &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 \\
 0 &amp; -9 &amp; 7 &amp; -2 &amp; -4 &amp; 1 &amp; | &amp; 0 &amp; 1 &amp; -2 &amp; 0 &amp; 0 &amp; 0 \\
@@ -726,12 +742,16 @@ $<span class="math notranslate nohighlight">\(
 1 &amp; 3 &amp; 2 &amp; 4 &amp; -1 &amp; 3  &amp; | &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 \\
 2 &amp; 2 &amp; -3 &amp; 1 &amp; -4 &amp; 2 &amp; | &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 \
 \end{bmatrix}
-\)</span>$</p></li>
+\end{split}\]</div>
+<ol class="arabic" start="3">
 <li><p>[R3 = R3 - 3 R1]</p>
 <p>[R4 = R4 - 4 R1]</p>
 <p>[R5 = R5 - R1]</p>
-<p>[R6 = R6 - 2 R1]
-$<span class="math notranslate nohighlight">\(
+<p>[R6 = R6 - 2 R1]</p>
+</li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 \begin{bmatrix}
 1 &amp; 4 &amp; -2 &amp; 3 &amp; 1 &amp; 2 &amp; | &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 \\
 0 &amp; -9 &amp; 7 &amp; -2 &amp; -4 &amp; 1 &amp; | &amp; 0 &amp; 1 &amp; -2 &amp; 0 &amp; 0 &amp; 0 \\
@@ -740,10 +760,12 @@ $<span class="math notranslate nohighlight">\(
 0 &amp; -1 &amp; 4 &amp; 1 &amp; -2 &amp; 1  &amp; | &amp; 0 &amp; 0 &amp; -1 &amp; 0 &amp; 1 &amp; 0 \\
 0 &amp; -6 &amp; 1 &amp; -5 &amp; -6 &amp; -2 &amp; | &amp; 0 &amp; 0 &amp; -2 &amp; 0 &amp; 0 &amp; 1 \
 \end{bmatrix}
-\)</span>$</p>
-</li>
-<li><p>Tukar kolom 5(yang sudah dikali dengan (-)) dengan kolom 2.
-$<span class="math notranslate nohighlight">\(
+\end{split}\]</div>
+<ol class="arabic simple" start="4">
+<li><p>Tukar kolom 5(yang sudah dikali dengan (-)) dengan kolom 2.</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 \begin{bmatrix}
 1 &amp; 4 &amp; -2 &amp; 3 &amp; 1 &amp; 2 &amp; | &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 \\
 0 &amp; 1 &amp; -4 &amp; -1 &amp; 2 &amp; -1  &amp; | &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; -1 &amp; 0 \\
@@ -752,13 +774,17 @@ $<span class="math notranslate nohighlight">\(
 0 &amp; -9 &amp; 7 &amp; -2 &amp; -4 &amp; 1 &amp; | &amp; 0 &amp; 1 &amp; -2 &amp; 0 &amp; 0 &amp; 0  \\
 0 &amp; -6 &amp; 1 &amp; -5 &amp; -6 &amp; -2 &amp; | &amp; 0 &amp; 0 &amp; -2 &amp; 0 &amp; 0 &amp; 1 \
 \end{bmatrix}
-\)</span>$</p></li>
+\end{split}\]</div>
+<ol class="arabic" start="5">
 <li><p>[R1 = R1 - ((-4) R2)]</p>
 <p>[R3 = R3 - 10 R2]</p>
 <p>[R4 = R4 - 17 R2]</p>
 <p>[R5 = R5 - 9 R2]</p>
-<p>[R6 = R6 - 6 R2]
-$<span class="math notranslate nohighlight">\(
+<p>[R6 = R6 - 6 R2]</p>
+</li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 \begin{bmatrix}
 1 &amp; 0 &amp; 14 &amp; 7 &amp; -7 &amp; 6 &amp; | &amp; 0 &amp; 0 &amp; -3 &amp; 0 &amp; 4 &amp; 0 \\
 0 &amp; 1 &amp; -4 &amp; -1 &amp; 2 &amp; -1  &amp; | &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; -1 &amp; 0 \\
@@ -767,10 +793,12 @@ $<span class="math notranslate nohighlight">\(
 0 &amp; 0 &amp; -29 &amp; -11 &amp; 14 &amp; 8 &amp; | &amp; 0 &amp; 1 &amp; 7 &amp; 0 &amp; -9 &amp; 0  \\
 0 &amp; 0 &amp; -23 &amp; -11 &amp; 6 &amp; -8 &amp; | &amp; 0 &amp; 0 &amp; 4 &amp; 0 &amp; -6 &amp; 1 \
 \end{bmatrix}
-\)</span>$</p>
-</li>
-<li><p>[R3 = (-1/35) R3]
-$<span class="math notranslate nohighlight">\(
+\end{split}\]</div>
+<ol class="arabic simple" start="6">
+<li><p>[R3 = (-1/35) R3]</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 \begin{bmatrix}
 1 &amp; 0 &amp; 14 &amp; 7 &amp; -7 &amp; 6 &amp; | &amp; 0 &amp; 0 &amp; -3 &amp; 0 &amp; 4 &amp; 0 \\
 0 &amp; 1 &amp; -4 &amp; -1 &amp; 2 &amp; -1  &amp; | &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; -1 &amp; 0 \\
@@ -779,13 +807,17 @@ $<span class="math notranslate nohighlight">\(
 0 &amp; 0 &amp; -29 &amp; -11 &amp; 14 &amp; 8 &amp; | &amp; 0 &amp; 1 &amp; 7 &amp; 0 &amp; -9 &amp; 0  \\
 0 &amp; 0 &amp; -23 &amp; -11 &amp; 6 &amp; -8 &amp; | &amp; 0 &amp; 0 &amp; 4 &amp; 0 &amp; -6 &amp; 1 \
 \end{bmatrix}
-\)</span>$</p></li>
+\end{split}\]</div>
+<ol class="arabic" start="7">
 <li><p>[R1 = R1 - 14 R3]</p>
 <p>[R2 = R2 - 4 R3]</p>
 <p>[R4 = R4 - 58 R3]</p>
 <p>[R5 = R5 - 29 R3]</p>
-<p>[R6 = R6 - 23 R3]
-$<span class="math notranslate nohighlight">\(
+<p>[R6 = R6 - 23 R3]</p>
+</li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 \begin{bmatrix}
 1 &amp; 0 &amp; 0 &amp; 1 &amp; -11/5 &amp; 2 &amp; | &amp; 2/5 &amp; 0 &amp; -1/5 &amp; 0 &amp; 0 &amp; 0 \\
 0 &amp; 1 &amp; 0 &amp; 5/7 &amp; 22/35 &amp; 1/7 &amp; | &amp; -4/35 &amp; 0 &amp; 1/5 &amp; 0 &amp; 1/7 &amp; 0 \\
@@ -794,10 +826,12 @@ $<span class="math notranslate nohighlight">\(
 0 &amp; 0 &amp; 0 &amp; 10/7 &amp; 142/35 &amp; 2/7 &amp; | &amp; -29/35 &amp; 1 &amp; 6/5 &amp; 0 &amp; -5/7 &amp; 0  \\
 0 &amp; 0 &amp; 0 &amp; -8/7 &amp; -66/35 &amp; -10/7 &amp; | &amp; -23/35 &amp; 0 &amp; -3/5 &amp; 0 &amp; 4/7 &amp; 1 \
 \end{bmatrix}
-\)</span>$</p>
-</li>
-<li><p>[R4 = (7/6) R4]
-$<span class="math notranslate nohighlight">\(
+\end{split}\]</div>
+<ol class="arabic simple" start="8">
+<li><p>[R4 = (7/6) R4]</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 \begin{bmatrix}
 1 &amp; 0 &amp; 0 &amp; 1 &amp; -11/5 &amp; 2 &amp; | &amp; 2/5 &amp; 0 &amp; -1/5 &amp; 0 &amp; 0 &amp; 0 \\
 0 &amp; 1 &amp; 0 &amp; 5/7 &amp; 22/35 &amp; 1/7 &amp; | &amp; -4/35 &amp; 0 &amp; 1/5 &amp; 0 &amp; 1/7 &amp; 0 \\
@@ -806,13 +840,17 @@ $<span class="math notranslate nohighlight">\(
 0 &amp; 0 &amp; 0 &amp; 10/7 &amp; 142/35 &amp; 2/7 &amp; | &amp; -29/35 &amp; 1 &amp; 6/5 &amp; 0 &amp; -5/7 &amp; 0  \\
 0 &amp; 0 &amp; 0 &amp; -8/7 &amp; -66/35 &amp; -10/7 &amp; | &amp; -23/35 &amp; 0 &amp; -3/5 &amp; 0 &amp; 4/7 &amp; 1 \
 \end{bmatrix}
-\)</span>$</p></li>
+\end{split}\]</div>
+<ol class="arabic" start="9">
 <li><p>[R1 = R1 - R4]</p>
 <p>[R2 = R2 - (5/7) R4]</p>
 <p>[R3 = R3 - (3/7) R4]</p>
 <p>[R5 = R5 - (10/7) R4]</p>
-<p>[R6 = R6 - (-8/7) R4]
-$<span class="math notranslate nohighlight">\(
+<p>[R6 = R6 - (-8/7) R4]</p>
+</li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 \begin{bmatrix}
 1 &amp; 0 &amp; 0 &amp; 0 &amp; -35/5 &amp; 33/2 &amp; | &amp; 7/3 &amp; 0 &amp; -11/6 &amp; -7/6 &amp; 1/2 &amp; 0 \\
 0 &amp; 1 &amp; 0 &amp; 0 &amp; -103/10 &amp; 21/2 &amp; | &amp; 19/15 &amp; 0 &amp; -29/30 &amp; -5/6 &amp; 1/2 &amp; 0 \\
@@ -821,10 +859,12 @@ $<span class="math notranslate nohighlight">\(
 0 &amp; 0 &amp; 0 &amp; 0 &amp; -89/5 &amp; 21 &amp; | &amp; 29/15 &amp; 1 &amp; 17/15 &amp; -5/3 &amp; 0 &amp; 0  \\
 0 &amp; 0 &amp; 0 &amp; 0 &amp; 78/5 &amp; -18 &amp; | &amp; -43/15 &amp; 0 &amp; 19/15 &amp; 4/3 &amp; 0 &amp; 1 \
 \end{bmatrix}
-\)</span>$</p>
-</li>
-<li><p>[R5 = (-5/89)R5]
-$<span class="math notranslate nohighlight">\(
+\end{split}\]</div>
+<ol class="arabic simple" start="10">
+<li><p>[R5 = (-5/89)R5]</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 \begin{bmatrix}
 1 &amp; 0 &amp; 0 &amp; 0 &amp; -35/5 &amp; 33/2 &amp; | &amp; 7/3 &amp; 0 &amp; -11/6 &amp; -7/6 &amp; 1/2 &amp; 0 \\
 0 &amp; 1 &amp; 0 &amp; 0 &amp; -103/10 &amp; 21/2 &amp; | &amp; 19/15 &amp; 0 &amp; -29/30 &amp; -5/6 &amp; 1/2 &amp; 0 \\
@@ -833,13 +873,17 @@ $<span class="math notranslate nohighlight">\(
 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; -105/89 &amp; | &amp; 29/267 &amp; -5/89 &amp; 17/267 &amp; 25/267 &amp; 0 &amp; 0  \\
 0 &amp; 0 &amp; 0 &amp; 0 &amp; 78/5 &amp; -18 &amp; | &amp; -43/15 &amp; 0 &amp; 19/15 &amp; 4/3 &amp; 0 &amp; 1 \
 \end{bmatrix}
-\)</span>$</p></li>
+\end{split}\]</div>
+<ol class="arabic" start="11">
 <li><p>[R1 = R1 - (-35/2) R5]</p>
 <p>[R2 = R2 - ((-103/10) R5)]</p>
 <p>[R3 = R3 - ((-69/10) R5)]</p>
 <p>[R4 = R4 - ((153/10) R5]</p>
-<p>[R6 = R6 - ((78/5) R5)]
-$<span class="math notranslate nohighlight">\(
+<p>[R6 = R6 - ((78/5) R5)]</p>
+</li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 \begin{bmatrix}
 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; -369/89 &amp; | &amp; 77/178 &amp; -175/178 &amp; -64/89 &amp; 42/89 &amp; 1/2 &amp; 0 \\
 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; -147/89 &amp; | &amp; 79/534 &amp; -103/178 &amp; -83/267 &amp; 35/267 &amp; 1/2 &amp; 0 \\
@@ -848,10 +892,12 @@ $<span class="math notranslate nohighlight">\(
 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; -105/89 &amp; | &amp; 29/267 &amp; -5/89 &amp; 17/267 &amp; 25/267 &amp; 0 &amp; 0  \\
 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 36/89 &amp; | &amp; -313/267 &amp; 78/89 &amp; 73/267 &amp; -34/267 &amp; 0 &amp; 1 \
 \end{bmatrix}
-\)</span>$</p>
-</li>
-<li><p>[R6 = (89/36) R6]
-$<span class="math notranslate nohighlight">\(
+\end{split}\]</div>
+<ol class="arabic simple" start="12">
+<li><p>[R6 = (89/36) R6]</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 \begin{bmatrix}
 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; -369/89 &amp; | &amp; 77/178 &amp; -175/178 &amp; -64/89 &amp; 42/89 &amp; 1/2 &amp; 0 \\
 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; -147/89 &amp; | &amp; 79/534 &amp; -103/178 &amp; -83/267 &amp; 35/267 &amp; 1/2 &amp; 0 \\
@@ -860,13 +906,17 @@ $<span class="math notranslate nohighlight">\(
 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; -105/89 &amp; | &amp; 29/267 &amp; -5/89 &amp; 17/267 &amp; 25/267 &amp; 0 &amp; 0  \\
 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; | &amp; -313/108 &amp; 13/6 &amp; 73/108 &amp; -17/54 &amp; 0 &amp; 89/36 \
 \end{bmatrix}
-\)</span>$</p></li>
+\end{split}\]</div>
+<ol class="arabic" start="13">
 <li><p>[R1 = R1 - ((-369/89) R6)]</p>
 <p>[R2 = R2 - ((-147/89) R6)]</p>
 <p>[R3 = R3 - ((-146/89) R6)]</p>
 <p>[R4 = R4 - ((316/89) R6)]</p>
-<p>[R5 = R5 - ((-105/89) R6)]
-$<span class="math notranslate nohighlight">\(
+<p>[R5 = R5 - ((-105/89) R6)]</p>
+</li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 \begin{bmatrix}
 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; | &amp; -139/12 &amp; 8 &amp; 25/12 &amp; -5/6 &amp; 1/2 &amp; 41/4 \\
 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; | &amp; -167/36 &amp; 3 &amp; 29/36 &amp; -7/18 &amp; 1/2 &amp; 49/12 \\
@@ -875,9 +925,7 @@ $<span class="math notranslate nohighlight">\(
 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; | &amp; -127/36 &amp; 5/2 &amp; 31/36 &amp; -5/18 &amp; 0 &amp; 35/12  \\
 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; | &amp; -313/108 &amp; 13/6 &amp; 73/108 &amp; -17/54 &amp; 0 &amp; 89/36 \
 \end{bmatrix}
-\)</span>$</p>
-</li>
-</ol>
+\end{split}\]</div>
 <p>BERIKUUT PENYELESAIAN DENGAN MENGGUNAKAN CODE:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
