@@ -42,7 +42,7 @@
   <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
     <script src="_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="_static/copybutton.js?v=f281be69"></script>
@@ -177,7 +177,11 @@
                 </a>
             </li>
         </ul>
-        
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="AljabarMatriks.html">Aljabar Matriks</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Matriks invers</a></li>
+</ul>
+
     </div>
 </nav></div>
     </div>
@@ -1364,10 +1368,7 @@ R2 = R2 + (-0.20689655172413793103)R3
  [-0.  0.  0. -0.  0.  0.]
  [-0. -0.  0.  0.  0.  0.]
  [-1. -1.  0.  0.  1.  0.]
- [-2.  0.  0.  0.  0.  1.]]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 
+ [-2.  0.  0.  0.  0.  1.]] 
 
 R4 = R4 + (-2.2413793103448275861)R3
 [[ 1.  0.  0.  0.  0.  1.  2.]
@@ -1484,8 +1485,9 @@ jika dibulatkan hasilnya seperti di atas, jika tidak dibulatkan hasilnya seperti
  [-0. -0.  0.  0.  0.  0.]
  [ 0.  1.  0.  0. -1. -0.]
  [-2.  0.  0. -0.  0.  1.]] 
-
-Eliminasi kolom kelima
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Eliminasi kolom kelima
 R0 = R0 + (-0.24778761061946902647)R4
 [[ 1.  0.  0.  0. -0.  1.  1.]
  [ 0.  1.  0.  0.  0. -0.  2.]
@@ -1695,8 +1697,9 @@ R4 = R4 + (-0.4)R5
  [ 0.  0.  0.  1. -0. -0.  2.]
  [ 0.  0.  0.  0.  1. -0.  4.]
  [-0. -0. -0. -0.  0.  1. -0.]] 
-
-[[ 0. -0.  0. -0. -0.  0.]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[ 0. -0.  0. -0. -0.  0.]
  [ 0. -0. -0.  0.  0. -0.]
  [-0.  0.  0. -0.  0.  0.]
  [-0.  0.  0.  0. -0.  0.]
@@ -1739,7 +1742,7 @@ Perhitungan Gauss Jordan telah selesai
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Matrix A menjadi Matrix Identitas setelah 34 operasi gaus jordan&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Matrix A = </span><span class="se">\n</span><span class="si">{</span><span class="n">A34</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Matrix A = </span><span class="se">\n</span><span class="si">{</span><span class="n">A34</span><span class="o">.</span><span class="n">round</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Matrix A Invers = </span><span class="se">\n</span><span class="si">{</span><span class="n">B34</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
@@ -1750,18 +1753,12 @@ Perhitungan Gauss Jordan telah selesai
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Matrix A menjadi Matrix Identitas setelah 34 operasi gaus jordan
 Matrix A = 
-[[ 1.00000000e+00  0.00000000e+00  0.00000000e+00  0.00000000e+00
-  -1.49880108e-16  1.11022302e-16  1.00000000e+00]
- [ 0.00000000e+00  1.00000000e+00  0.00000000e+00  0.00000000e+00
-  -3.33066907e-17 -8.32667268e-17  1.99840144e-15]
- [ 0.00000000e+00  0.00000000e+00  1.00000000e+00  0.00000000e+00
-  -4.44089210e-17  0.00000000e+00  1.00000000e+00]
- [ 0.00000000e+00  0.00000000e+00  0.00000000e+00  1.00000000e+00
-  -1.38777878e-16 -1.80411242e-16  2.00000000e+00]
- [ 0.00000000e+00  0.00000000e+00  0.00000000e+00  0.00000000e+00
-   1.00000000e+00 -3.88578059e-16  4.00000000e+00]
- [-0.00000000e+00 -0.00000000e+00 -0.00000000e+00 -0.00000000e+00
-   1.11022302e-16  1.00000000e+00 -0.00000000e+00]]
+[[ 1.  0.  0.  0. -0.  0.  1.]
+ [ 0.  1.  0.  0. -0. -0.  0.]
+ [ 0.  0.  1.  0. -0.  0.  1.]
+ [ 0.  0.  0.  1. -0. -0.  2.]
+ [ 0.  0.  0.  0.  1. -0.  4.]
+ [-0. -0. -0. -0.  0.  1. -0.]]
 
 
 Matrix A Invers = 
