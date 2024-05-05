@@ -63,7 +63,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Matriks invers" href="MatriksInvers.html" />
-    <link rel="prev" title="&lt;no title&gt;" href="SistemLinier.html" />
+    <link rel="prev" title="Sistem Linier" href="SistemLinier.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -179,6 +179,7 @@
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="SistemLinier.html">Sistem Linier</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Aljabar Matriks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="MatriksInvers.html">Matriks invers</a></li>
 </ul>
@@ -750,7 +751,7 @@ A(cB)=
 <ul class="simple">
 <li><p>Perkalian identitas:</p></li>
 </ul>
-<p>Dalam operasi perkalian ini, matriks dikalikan dengan matriks identitas. Dimana matriks identitas merupakan matriks persegi yang memiliki semua elemen di luar diagonal utama bernilai 1, dan elemen di luar diagonal utama bernilai 0. Matriks identitas dilambangkan dengan I. Contoh :</p>
+<p>Dalam operasi perkalian ini, matriks dikalikan dengan matriks identitas. Dimana matriks identitas merupakan matriks persegi yang memiliki semua elemen di dalam diagonal utama bernilai 1, dan elemen di luar diagonal utama bernilai 0. Matriks identitas dilambangkan dengan I. Contoh :</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{align*}
@@ -858,7 +859,7 @@ CT (C Transposre)=
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Z = C_transpose x C =</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">z</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;ordo z adalah&#39;</span><span class="p">,</span><span class="n">z</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 <span class="n">p</span><span class="o">=</span><span class="n">c</span><span class="nd">@c_tran</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;P = C_transpose x C =</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">p</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;P = C x C_tranpose =</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">p</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;ordo P adalah&#39;</span><span class="p">,</span><span class="n">p</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Dapat disimpulkan bahwa C_transpose X C tidak sama dengan C X C_transpose&quot;</span><span class="p">)</span>
 </pre></div>
@@ -877,7 +878,7 @@ Z = C_transpose x C =
  [[17 14]
  [14 57]]
 ordo z adalah (2, 2)
-P = C_transpose x C =
+P = C x C_tranpose =
  [[25 10 26]
  [10 20 16]
  [26 16 29]]
@@ -1114,7 +1115,7 @@ matriks 1=([[2,4,7],[6,-3,2],[5,-2,7]])’</p></li>
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">&lt;no title&gt;</p>
+        <p class="prev-next-title">Sistem Linier</p>
       </div>
     </a>
     <a class="right-next"
