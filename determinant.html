@@ -60,6 +60,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'determinant';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Matriks invers" href="MatriksInvers.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -121,8 +122,6 @@
       
       
       
-        
-      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -176,10 +175,11 @@
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="SistemLinier.html">Sistem Linier</a></li>
 <li class="toctree-l1"><a class="reference internal" href="AljabarMatriks.html">Aljabar Matriks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="MatriksInvers.html">Matriks invers</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Determinant</a></li>
 </ul>
 
     </div>
@@ -375,6 +375,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#syarat-mencari-determinan-matriks">syarat mencari determinan matriks :</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sifat-sifat-determinan">sifat sifat determinan</a></li>
 </ul>
             </nav>
@@ -389,26 +390,34 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="determinant">
 <h1>Determinant<a class="headerlink" href="#determinant" title="Link to this heading">#</a></h1>
+<p>Nilai determinan matriks memberikan informasi tentang apakah matriks tersebut memiliki invers (jika determinannya tidak nol), apakah matriks tersebut singuler atau tidak. Jika determinan suatu matriks adalah nol, maka matriks tersebut disebut sebagai matriks singular, yang artinya tidak memiliki invers. Sedangkan jika determinannya bukan nol, maka matriks tersebut disebut sebagai matriks nonsingular atau invertible, yang artinya memiliki invers.</p>
+<section id="syarat-mencari-determinan-matriks">
+<h2>syarat mencari determinan matriks :<a class="headerlink" href="#syarat-mencari-determinan-matriks" title="Link to this heading">#</a></h2>
+<p>Hanya dapat dilakukan pada matriks bujur sangkar atau matriks persegi atau matriks yang mempunyai baris = kolom</p>
+</section>
 <section id="sifat-sifat-determinan">
 <h2>sifat sifat determinan<a class="headerlink" href="#sifat-sifat-determinan" title="Link to this heading">#</a></h2>
 <ol class="arabic">
-<li><p>determinan dari matriks identitas = 1</p></li>
+<li><p>Determinan dari matriks identitas = 1. Atau dapat ditulis det(I)=1</p></li>
 <li><p>jika suatu matriks dikalikan dengan konstanta maka rumus dekterminannya:</p>
-<p>constanta^berapa baris atau kolom yang dikalikan (hasil determinan dari matriks asalnya)</p>
+<p>-&gt; constanta^berapa baris atau kolom yang dikalikan dengan konstanta(hasil determinan dari matriks asalnya)</p>
 <p>atau</p>
-<p>K^n(det(A))</p>
+<p>-&gt; K^n(det(matriks asal))</p>
+<p>keterangan :</p>
+<ul class="simple">
+<li><p>K = konstanta</p></li>
+<li><p>n = baris atau kolom yang telah dikalikan dengan dengan konstanta</p></li>
+<li><p>det(matriks asal) = determinan dari matriks asal</p></li>
+</ul>
 </li>
 <li><p>jika matriks segitiga atas atau segitiga bawah dicari determinannya maka akan menghasilkan perkalian dari elemen di diagonalnya</p></li>
 <li><p>det(AB) = det(A).det(B)</p></li>
 <li><p>det(A)^2 = det(A).det(A)</p></li>
 <li><p>det(A^T) = det(A)</p></li>
 </ol>
-<p>##syarat mencari determinan matriks :
-Hanya dapat dilakukan pada matriks bujur sangkar atau matriks persegi atau matriks yang mempunyai baris = kolom</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-
 
 <span class="c1">#fungsi mencari determinan</span>
 <span class="k">def</span> <span class="nf">det</span><span class="p">(</span><span class="n">matriks</span><span class="p">):</span>
@@ -436,7 +445,7 @@ Hanya dapat dilakukan pada matriks bujur sangkar atau matriks persegi atau matri
 <span class="n">f</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">],[</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">]])</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;determinan dari matriks f adalah&quot;</span><span class="p">,</span><span class="n">det</span><span class="p">(</span><span class="n">f</span><span class="p">)</span><span class="o">.</span><span class="n">round</span><span class="p">())</span>
 <span class="n">g</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">6</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">],[</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">],[</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">]])</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;determinan dari matriks g adalah&quot;</span><span class="p">,</span><span class="n">det</span><span class="p">(</span><span class="n">g</span><span class="p">)</span><span class="o">.</span><span class="n">round</span><span class="p">())</span><span class="c1">#2^3(3)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;determinan dari matriks g adalah&quot;</span><span class="p">,</span><span class="n">det</span><span class="p">(</span><span class="n">g</span><span class="p">)</span><span class="o">.</span><span class="n">round</span><span class="p">())</span><span class="c1">#2^3(3)-&gt; 2=konstanta, ^3=jumlah baris yang dikalikan dengan konstanta, (3)=hasil dari det(c)</span>
 <span class="n">a</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">],[</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">]])</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;determinan dari matriks a adalah&quot;</span><span class="p">,</span><span class="n">det</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">.</span><span class="n">round</span><span class="p">())</span>
 <span class="n">h</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">6</span><span class="p">,</span><span class="mi">8</span><span class="p">],[</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">]])</span>
@@ -542,6 +551,7 @@ determinan dari matriks under2 adalah 8.0
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;determinan dari matriks cobaB adalah&quot;</span><span class="p">,</span><span class="n">det</span><span class="p">(</span><span class="n">cobaB</span><span class="p">))</span>
 <span class="n">cobaC</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">]])</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;determinan dari matriks cobaC adalah&quot;</span><span class="p">,</span><span class="n">det</span><span class="p">(</span><span class="n">cobaC</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;terbukti bahwa det(cobaC) = det(cobaA)det(cobaB)&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -550,6 +560,7 @@ determinan dari matriks under2 adalah 8.0
 determinan dari matriks cobaA adalah 1.0
 determinan dari matriks cobaB adalah 0.0
 determinan dari matriks cobaC adalah 0.0
+terbukti bahwa det(cobaC) = det(cobaA)det(cobaB)
 </pre></div>
 </div>
 </div>
@@ -587,6 +598,15 @@ determinan dari matriks cobaC adalah 0.0
                 <footer class="prev-next-footer">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="MatriksInvers.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Matriks invers</p>
+      </div>
+    </a>
 </div>
                 </footer>
               
@@ -603,6 +623,7 @@ determinan dari matriks cobaC adalah 0.0
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#syarat-mencari-determinan-matriks">syarat mencari determinan matriks :</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sifat-sifat-determinan">sifat sifat determinan</a></li>
 </ul>
   </nav></div>
