@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Determinant &#8212; My sample book</title>
+    <title>DETERMINANT &#8212; My sample book</title>
   
   
   
@@ -57,6 +57,8 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'determinant';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -179,7 +181,8 @@
 <li class="toctree-l1"><a class="reference internal" href="SistemLinier.html">Sistem Linier</a></li>
 <li class="toctree-l1"><a class="reference internal" href="AljabarMatriks.html">Aljabar Matriks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="MatriksInvers.html">Matriks invers</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Determinant</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">DETERMINANT</a></li>
+
 </ul>
 
     </div>
@@ -365,7 +368,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Determinant</h1>
+    <h1>DETERMINANT</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -375,9 +378,17 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#syarat-mencari-determinan-matriks">syarat mencari determinan matriks :</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sifat-sifat-determinan">sifat sifat determinan</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">DETERMINANT</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#syarat-mencari-determinan-matriks">Syarat Mencari Determinan Matriks :</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sifat-sifat-determinan">Sifat-sifat Determinan</a></li>
 </ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#cofactor">COFACTOR</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#menghitung-invers-matriks-5-x-5-dengan-cofactor">Menghitung Invers Matriks 5 X 5 dengan cofactor</a></li>
+</ul>
+</li>
+</ul>
+
             </nav>
         </div>
     </div>
@@ -389,14 +400,14 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="determinant">
-<h1>Determinant<a class="headerlink" href="#determinant" title="Link to this heading">#</a></h1>
+<h1>DETERMINANT<a class="headerlink" href="#determinant" title="Link to this heading">#</a></h1>
 <p>Nilai determinan matriks memberikan informasi tentang apakah matriks tersebut memiliki invers (jika determinannya tidak nol), apakah matriks tersebut singuler atau tidak. Jika determinan suatu matriks adalah nol, maka matriks tersebut disebut sebagai matriks singular, yang artinya tidak memiliki invers. Sedangkan jika determinannya bukan nol, maka matriks tersebut disebut sebagai matriks nonsingular atau invertible, yang artinya memiliki invers.</p>
 <section id="syarat-mencari-determinan-matriks">
-<h2>syarat mencari determinan matriks :<a class="headerlink" href="#syarat-mencari-determinan-matriks" title="Link to this heading">#</a></h2>
+<h2>Syarat Mencari Determinan Matriks :<a class="headerlink" href="#syarat-mencari-determinan-matriks" title="Link to this heading">#</a></h2>
 <p>Hanya dapat dilakukan pada matriks bujur sangkar atau matriks persegi atau matriks yang mempunyai baris = kolom</p>
 </section>
 <section id="sifat-sifat-determinan">
-<h2>sifat sifat determinan<a class="headerlink" href="#sifat-sifat-determinan" title="Link to this heading">#</a></h2>
+<h2>Sifat-sifat Determinan<a class="headerlink" href="#sifat-sifat-determinan" title="Link to this heading">#</a></h2>
 <ol class="arabic">
 <li><p>Determinan dari matriks identitas = 1. Atau dapat ditulis det(I)=1</p></li>
 <li><p>jika suatu matriks dikalikan dengan konstanta maka rumus dekterminannya:</p>
@@ -411,9 +422,17 @@ document.write(`
 </ul>
 </li>
 <li><p>jika matriks segitiga atas atau segitiga bawah dicari determinannya maka akan menghasilkan perkalian dari elemen di diagonalnya</p></li>
-<li><p>det(AB) = det(A).det(B)</p></li>
-<li><p>det(A)^2 = det(A).det(A)</p></li>
-<li><p>det(A^T) = det(A)</p></li>
+<li><p><span class="math notranslate nohighlight">\(det(AB) = det(A)det(B)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(det(A^-1) =  1/det(A)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(det(A)^2 = det(A).det(A)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(det(A^T) = det(A)\)</span></p></li>
+</ol>
+<ul class="simple">
+<li><p>Zero row -&gt; zero column</p></li>
+<li><p>Same row -&gt; same column</p></li>
+</ul>
+<ol class="arabic simple" start="8">
+<li><p><span class="math notranslate nohighlight">\(det(A+B) != det(A) + det(B)\)</span></p></li>
 </ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -567,6 +586,344 @@ terbukti bahwa det(cobaC) = det(cobaA)det(cobaB)
 </div>
 </section>
 </section>
+<section class="tex2jax_ignore mathjax_ignore" id="cofactor">
+<h1>COFACTOR<a class="headerlink" href="#cofactor" title="Link to this heading">#</a></h1>
+<p>Adalah sebuah angka yang diperoleh dari elemen-elemen dalam matriks dengan cara tertenttu, yang sering digunakan dalam perhitungan determinan dan invers matriks. Cofactor dari <span class="math notranslate nohighlight">\(C_{ij}\)</span> dari elemen <span class="math notranslate nohighlight">\(a_{ij}\)</span> dalam sebuah matriks adalah hasil kali dari determinan submatriks yang diperoleh dengan menghapus baris <span class="math notranslate nohighlight">\(i\)</span> dan kolom <span class="math notranslate nohighlight">\(j\)</span> dari mattriks asli, dikalikan dengan <span class="math notranslate nohighlight">\((-1)^{i+j}\)</span></p>
+<section id="menghitung-invers-matriks-5-x-5-dengan-cofactor">
+<h2>Menghitung Invers Matriks 5 X 5 dengan cofactor<a class="headerlink" href="#menghitung-invers-matriks-5-x-5-dengan-cofactor" title="Link to this heading">#</a></h2>
+<p>Kita bisa mencari invers matriks dengan menemukan determinan dan kofaktornya. Berikut langkah-langkah menghitung kofaktor:</p>
+<ol class="arabic simple">
+<li><p>Pilih elemen aij</p></li>
+<li><p>Hapus baris dan kolom, baris ke-<span class="math notranslate nohighlight">\(i\)</span> dan kolom ke-<span class="math notranslate nohighlight">\(j\)</span> dari matriks untuk mendapatkan submatriks</p></li>
+<li><p>Bentuk sub matriks, submatriks ini didapat dari elemen-elemen yang tersisa setelah menghapus baris dan kolom tersebut</p></li>
+<li><p>Hitung determinan submatriks</p></li>
+<li><p>Kalikan dengan <span class="math notranslate nohighlight">\((-1)^{i+j}\)</span>, cofaktor <span class="math notranslate nohighlight">\(C_{ij}\)</span> adalah hasil kali determinan submatriks dengan <span class="math notranslate nohighlight">\((-1)^{i+j}\)</span></p></li>
+</ol>
+<p>Secara matematis, kofaktor Cij dari elemen aij adalah</p>
+<p><span class="math notranslate nohighlight">\(C_{ij} = (-1)^{i+j} .det(M_{ij})\)</span></p>
+<p>dimana det <span class="math notranslate nohighlight">\((M_{ij})\)</span> adalah determinan submatriks yang diperoleh dengan menghapus baris <span class="math notranslate nohighlight">\(i\)</span> dan kolom <span class="math notranslate nohighlight">\(j\)</span> dari matriks asli.</p>
+<p>Rumus det pick row <span class="math notranslate nohighlight">\(i:\)</span></p>
+<div class="math notranslate nohighlight">
+\[det A = a_{i1}c_{i1}+a_{i2}c_{i2}+...+a_{in}c_{in}\]</div>
+<p>Rumus det pick column <span class="math notranslate nohighlight">\(j:\)</span></p>
+<div class="math notranslate nohighlight">
+\[det A = a_{1j}c_{1j}+a_{2j}c_{2j}+...+a_{nj}c_{nj}\]</div>
+<p>Rumus invers matrix:</p>
+<div class="math notranslate nohighlight">
+\[A^-1= (1/det A) * adj(A) \]</div>
+<p>Adjoin:</p>
+<div class="math notranslate nohighlight">
+\[adj(A)=(kof(A))^T\]</div>
+<p>(adj(A)) adalah hasil dari tranpose dari setiap cofactor-cofactor matriks</p>
+<p>Contoh matriks 5X5:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{equation*}
+Y=
+\begin{bmatrix}
+2 &amp; 1 &amp; 3 &amp; 1 &amp; 2 \\
+1 &amp; 1 &amp; 6 &amp; 1 &amp; 3 \\
+2 &amp; -2 &amp; 5 &amp; 4 &amp; 1 \\
+1 &amp; 2 &amp; 1 &amp; 3 &amp; 1 \\
+3 &amp; 2 &amp; 3 &amp; 2 &amp; 1 \\
+\end{bmatrix}
+\end{equation*}
+\end{split}\]</div>
+<p>Berikut penyelesaian matriks di atas dengan memanggil library numpy:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1">#fungsi mencari determinan</span>
+<span class="k">def</span> <span class="nf">det</span><span class="p">(</span><span class="n">matriks</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">det</span><span class="p">(</span><span class="n">matriks</span><span class="p">)</span>
+<span class="c1">#fungsi untuk menghitung kofaktor</span>
+<span class="k">def</span> <span class="nf">hitung_kofaktor</span><span class="p">(</span><span class="n">matrix</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">cofactor</span><span class="p">(</span><span class="n">matrix</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">):</span>
+        <span class="n">minor</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="n">matrix</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span> <span class="n">j</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">cof</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">**</span> <span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="n">j</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">det</span><span class="p">(</span><span class="n">minor</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">cof</span>
+    <span class="n">rows</span><span class="p">,</span> <span class="n">cols</span> <span class="o">=</span> <span class="n">matrix</span><span class="o">.</span><span class="n">shape</span>
+    <span class="n">cofactor_matrix</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">rows</span><span class="p">,</span> <span class="n">cols</span><span class="p">))</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">rows</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">cols</span><span class="p">):</span>
+            <span class="n">cofactor_matrix</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">cofactor</span><span class="p">(</span><span class="n">matrix</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">cofactor_matrix</span>
+<span class="c1">#fungsi mencari invers</span>
+<span class="k">def</span> <span class="nf">invers</span> <span class="p">(</span><span class="n">matriks</span><span class="p">):</span>
+  <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">matriks</span><span class="p">)</span>
+
+<span class="n">Y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span> <span class="p">([[</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">]])</span>
+
+<span class="c1">#mencari sub matriks yang didapat dari elemen-elemen yang tersisa setelah menghapus baris dan kolom</span>
+<span class="c1">#baris 1</span>
+<span class="n">Y11</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">]])</span>
+<span class="n">Y12</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">]])</span>
+<span class="n">Y13</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">]])</span>
+<span class="n">Y14</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">]])</span>
+<span class="n">Y15</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">]])</span>
+<span class="c1">#baris 2</span>
+<span class="n">Y21</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">]])</span>
+<span class="n">Y22</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],[</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">]])</span>
+<span class="n">Y23</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],[</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">]])</span>
+<span class="n">Y24</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">],[</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">]])</span>
+<span class="n">Y25</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">]])</span>
+<span class="c1">#baris 3</span>
+<span class="n">Y31</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">]])</span>
+<span class="n">Y32</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">]])</span>
+<span class="n">Y33</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">]])</span>
+<span class="n">Y34</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">]])</span>
+<span class="n">Y35</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">]])</span>
+<span class="c1">#baris 4</span>
+<span class="n">Y41</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">]])</span>
+<span class="n">Y42</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">]])</span>
+<span class="n">Y43</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">]])</span>
+<span class="n">Y44</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">]])</span>
+<span class="n">Y45</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">,],[</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">]])</span>
+<span class="c1">#baris 5</span>
+<span class="n">Y51</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">]])</span>
+<span class="n">Y52</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">]])</span>
+<span class="n">Y53</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">]])</span>
+<span class="n">Y54</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]])</span>
+<span class="n">Y55</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">]])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Kemudian kita mencari determinan dari masing-masing sub matriks</span>
+<span class="c1">#baris 1</span>
+<span class="n">det11</span> <span class="o">=</span> <span class="n">det</span><span class="p">(</span><span class="n">Y11</span><span class="p">)</span>
+<span class="n">det12</span> <span class="o">=</span> <span class="n">det</span><span class="p">(</span><span class="n">Y12</span><span class="p">)</span>
+<span class="n">det13</span> <span class="o">=</span> <span class="n">det</span><span class="p">(</span><span class="n">Y13</span><span class="p">)</span>
+<span class="n">det14</span> <span class="o">=</span> <span class="n">det</span><span class="p">(</span><span class="n">Y14</span><span class="p">)</span>
+<span class="n">det15</span> <span class="o">=</span> <span class="n">det</span><span class="p">(</span><span class="n">Y15</span><span class="p">)</span>
+<span class="c1">#baris 2</span>
+<span class="n">det21</span> <span class="o">=</span> <span class="n">det</span><span class="p">(</span><span class="n">Y21</span><span class="p">)</span>
+<span class="n">det22</span> <span class="o">=</span> <span class="n">det</span><span class="p">(</span><span class="n">Y22</span><span class="p">)</span>
+<span class="n">det23</span> <span class="o">=</span> <span class="n">det</span><span class="p">(</span><span class="n">Y23</span><span class="p">)</span>
+<span class="n">det24</span> <span class="o">=</span> <span class="n">det</span><span class="p">(</span><span class="n">Y24</span><span class="p">)</span>
+<span class="n">det25</span> <span class="o">=</span> <span class="n">det</span><span class="p">(</span><span class="n">Y25</span><span class="p">)</span>
+<span class="c1">#baris 3</span>
+<span class="n">det31</span> <span class="o">=</span> <span class="n">det</span><span class="p">(</span><span class="n">Y31</span><span class="p">)</span>
+<span class="n">det32</span> <span class="o">=</span> <span class="n">det</span><span class="p">(</span><span class="n">Y32</span><span class="p">)</span>
+<span class="n">det33</span> <span class="o">=</span> <span class="n">det</span><span class="p">(</span><span class="n">Y33</span><span class="p">)</span>
+<span class="n">det34</span> <span class="o">=</span> <span class="n">det</span><span class="p">(</span><span class="n">Y34</span><span class="p">)</span>
+<span class="n">det35</span> <span class="o">=</span> <span class="n">det</span><span class="p">(</span><span class="n">Y35</span><span class="p">)</span>
+<span class="c1">#baris 4</span>
+<span class="n">det41</span> <span class="o">=</span> <span class="n">det</span><span class="p">(</span><span class="n">Y41</span><span class="p">)</span>
+<span class="n">det42</span> <span class="o">=</span> <span class="n">det</span><span class="p">(</span><span class="n">Y42</span><span class="p">)</span>
+<span class="n">det43</span> <span class="o">=</span> <span class="n">det</span><span class="p">(</span><span class="n">Y43</span><span class="p">)</span>
+<span class="n">det44</span> <span class="o">=</span> <span class="n">det</span><span class="p">(</span><span class="n">Y44</span><span class="p">)</span>
+<span class="n">det45</span> <span class="o">=</span> <span class="n">det</span><span class="p">(</span><span class="n">Y45</span><span class="p">)</span>
+<span class="c1">#baris 5</span>
+<span class="n">det51</span> <span class="o">=</span> <span class="n">det</span><span class="p">(</span><span class="n">Y51</span><span class="p">)</span>
+<span class="n">det52</span> <span class="o">=</span> <span class="n">det</span><span class="p">(</span><span class="n">Y52</span><span class="p">)</span>
+<span class="n">det53</span> <span class="o">=</span> <span class="n">det</span><span class="p">(</span><span class="n">Y53</span><span class="p">)</span>
+<span class="n">det54</span> <span class="o">=</span> <span class="n">det</span><span class="p">(</span><span class="n">Y54</span><span class="p">)</span>
+<span class="n">det55</span> <span class="o">=</span> <span class="n">det</span><span class="p">(</span><span class="n">Y55</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Setelah mengetahui determinan dari masing-masing sub matriks kita kemudian mencari kofaktornya</span>
+<span class="c1">#baris 1</span>
+<span class="n">c11</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">det11</span>
+<span class="n">c12</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">det12</span>
+<span class="n">c13</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="mi">3</span><span class="p">)</span> <span class="o">*</span> <span class="n">det13</span>
+<span class="n">c14</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="mi">4</span><span class="p">)</span> <span class="o">*</span> <span class="n">det14</span>
+<span class="n">c15</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="mi">5</span><span class="p">)</span> <span class="o">*</span> <span class="n">det15</span>
+<span class="c1">#baris 2</span>
+<span class="n">c21</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mi">2</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">det21</span>
+<span class="n">c22</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mi">2</span><span class="o">+</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">det22</span>
+<span class="n">c23</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mi">2</span><span class="o">+</span><span class="mi">3</span><span class="p">)</span> <span class="o">*</span> <span class="n">det23</span>
+<span class="n">c24</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mi">2</span><span class="o">+</span><span class="mi">4</span><span class="p">)</span> <span class="o">*</span> <span class="n">det24</span>
+<span class="n">c25</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mi">2</span><span class="o">+</span><span class="mi">5</span><span class="p">)</span> <span class="o">*</span> <span class="n">det25</span>
+<span class="c1">#baris 3</span>
+<span class="n">c31</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mi">3</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">det31</span>
+<span class="n">c32</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mi">3</span><span class="o">+</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">det32</span>
+<span class="n">c33</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mi">3</span><span class="o">+</span><span class="mi">3</span><span class="p">)</span> <span class="o">*</span> <span class="n">det33</span>
+<span class="n">c34</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mi">3</span><span class="o">+</span><span class="mi">4</span><span class="p">)</span> <span class="o">*</span> <span class="n">det34</span>
+<span class="n">c35</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mi">3</span><span class="o">+</span><span class="mi">5</span><span class="p">)</span> <span class="o">*</span> <span class="n">det35</span>
+<span class="c1">#baris 4</span>
+<span class="n">c41</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mi">4</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">det41</span>
+<span class="n">c42</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mi">4</span><span class="o">+</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">det42</span>
+<span class="n">c43</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mi">4</span><span class="o">+</span><span class="mi">3</span><span class="p">)</span> <span class="o">*</span> <span class="n">det43</span>
+<span class="n">c44</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mi">4</span><span class="o">+</span><span class="mi">4</span><span class="p">)</span> <span class="o">*</span> <span class="n">det44</span>
+<span class="n">c45</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mi">4</span><span class="o">+</span><span class="mi">5</span><span class="p">)</span> <span class="o">*</span> <span class="n">det45</span>
+<span class="c1">#baris 5</span>
+<span class="n">c51</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mi">5</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">det51</span>
+<span class="n">c52</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mi">5</span><span class="o">+</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">det52</span>
+<span class="n">c53</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mi">5</span><span class="o">+</span><span class="mi">3</span><span class="p">)</span> <span class="o">*</span> <span class="n">det53</span>
+<span class="n">c54</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mi">5</span><span class="o">+</span><span class="mi">4</span><span class="p">)</span> <span class="o">*</span> <span class="n">det54</span>
+<span class="n">c55</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mi">5</span><span class="o">+</span><span class="mi">5</span><span class="p">)</span> <span class="o">*</span> <span class="n">det55</span>
+
+<span class="c1">#mari kita cek apakah kofaktornya sudah benar atau belum</span>
+<span class="c1">#kofaktor memakai fungsi di atas</span>
+<span class="n">cofactor_matrix</span> <span class="o">=</span> <span class="n">hitung_kofaktor</span><span class="p">(</span><span class="n">Y</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Matriks Kofaktor memakai fungsi:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">cofactor_matrix</span><span class="p">,</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span><span class="o">*</span><span class="mi">45</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Matriks Kofaktor dari hasil pertungan manual:&quot;</span><span class="p">)</span>
+<span class="n">cofactor</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="n">c11</span><span class="p">,</span><span class="n">c12</span><span class="p">,</span><span class="n">c13</span><span class="p">,</span><span class="n">c14</span><span class="p">,</span><span class="n">c15</span><span class="p">],[</span><span class="n">c21</span><span class="p">,</span><span class="n">c22</span><span class="p">,</span><span class="n">c23</span><span class="p">,</span><span class="n">c24</span><span class="p">,</span><span class="n">c25</span><span class="p">],[</span><span class="n">c31</span><span class="p">,</span><span class="n">c32</span><span class="p">,</span><span class="n">c33</span><span class="p">,</span><span class="n">c34</span><span class="p">,</span><span class="n">c35</span><span class="p">],[</span><span class="n">c41</span><span class="p">,</span><span class="n">c42</span><span class="p">,</span><span class="n">c43</span><span class="p">,</span><span class="n">c44</span><span class="p">,</span><span class="n">c45</span><span class="p">],[</span><span class="n">c51</span><span class="p">,</span><span class="n">c52</span><span class="p">,</span><span class="n">c53</span><span class="p">,</span><span class="n">c54</span><span class="p">,</span><span class="n">c55</span><span class="p">]])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">cofactor</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Hasil dari keduanya sama, ini menunjukkan bahwa kita bisa menggunakan hitung manual, tetapi akan lebih menyingkat waktu jika kita menggunakan fungsi&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Matriks Kofaktor memakai fungsi:
+[[ -82.   69.   87.   10. -173.]
+ [  54.  -33.  -49.   10.   31.]
+ [  -6.   32.   -4.  -20.    6.]
+ [  36.  -22.   24.  -50.  -36.]
+ [ -28.  -49.  -47.   20.  113.]] 
+
+=============================================
+
+Matriks Kofaktor dari hasil pertungan manual:
+[[ -82.   69.   87.   10. -173.]
+ [  54.  -33.  -49.   10.   31.]
+ [  -6.   32.   -4.  -20.    6.]
+ [  36.  -22.   24.  -50.  -36.]
+ [ -28.  -49.  -47.   20.  113.]]
+
+Hasil dari keduanya sama, ini menunjukkan bahwa kita bisa menggunakan hitung manual, tetapi akan lebih menyingkat waktu jika kita menggunakan fungsi
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#selanjutnya kita menempat setiap elemen dari matriks aslinya di dalam sebuah variable baru</span>
+<span class="n">a11</span> <span class="o">=</span> <span class="n">Y</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">a12</span> <span class="o">=</span> <span class="n">Y</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">a13</span> <span class="o">=</span> <span class="n">Y</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span>
+<span class="n">a14</span> <span class="o">=</span> <span class="n">Y</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">3</span><span class="p">]</span>
+<span class="n">a15</span> <span class="o">=</span> <span class="n">Y</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">4</span><span class="p">]</span>
+<span class="n">a21</span> <span class="o">=</span> <span class="n">Y</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">a22</span> <span class="o">=</span> <span class="n">Y</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">a23</span> <span class="o">=</span> <span class="n">Y</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span>
+<span class="n">a24</span> <span class="o">=</span> <span class="n">Y</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">3</span><span class="p">]</span>
+<span class="n">a25</span> <span class="o">=</span> <span class="n">Y</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">4</span><span class="p">]</span>
+<span class="n">a31</span> <span class="o">=</span> <span class="n">Y</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">a32</span> <span class="o">=</span> <span class="n">Y</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">a33</span> <span class="o">=</span> <span class="n">Y</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span>
+<span class="n">a34</span> <span class="o">=</span> <span class="n">Y</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">3</span><span class="p">]</span>
+<span class="n">a35</span> <span class="o">=</span> <span class="n">Y</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">4</span><span class="p">]</span>
+<span class="n">a41</span> <span class="o">=</span> <span class="n">Y</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">a42</span> <span class="o">=</span> <span class="n">Y</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">a43</span> <span class="o">=</span> <span class="n">Y</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span>
+<span class="n">a44</span> <span class="o">=</span> <span class="n">Y</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="mi">3</span><span class="p">]</span>
+<span class="n">a45</span> <span class="o">=</span> <span class="n">Y</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="mi">4</span><span class="p">]</span>
+<span class="n">a51</span> <span class="o">=</span> <span class="n">Y</span><span class="p">[</span><span class="mi">4</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">a52</span> <span class="o">=</span> <span class="n">Y</span><span class="p">[</span><span class="mi">4</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">a53</span> <span class="o">=</span> <span class="n">Y</span><span class="p">[</span><span class="mi">4</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span>
+<span class="n">a54</span> <span class="o">=</span> <span class="n">Y</span><span class="p">[</span><span class="mi">4</span><span class="p">][</span><span class="mi">3</span><span class="p">]</span>
+<span class="n">a55</span> <span class="o">=</span> <span class="n">Y</span><span class="p">[</span><span class="mi">4</span><span class="p">][</span><span class="mi">4</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Setelah itu, kita mecari determinan dari masing masing barisnya</span>
+<span class="c1">#baris 1</span>
+<span class="n">det1</span> <span class="o">=</span> <span class="n">a11</span><span class="o">*</span><span class="n">c11</span> <span class="o">+</span> <span class="n">a12</span><span class="o">*</span><span class="n">c12</span> <span class="o">+</span> <span class="n">a13</span><span class="o">*</span><span class="n">c13</span> <span class="o">+</span> <span class="n">a14</span><span class="o">*</span><span class="n">c14</span> <span class="o">+</span> <span class="n">a15</span><span class="o">*</span><span class="n">c15</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;det Y baris 1 = </span><span class="si">{</span><span class="n">det1</span><span class="si">}</span><span class="s2"> atau bisa dibulatkan menjadi </span><span class="si">{</span><span class="n">det1</span><span class="o">.</span><span class="n">round</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="c1">#baris 2</span>
+<span class="n">det2</span> <span class="o">=</span> <span class="n">a21</span><span class="o">*</span><span class="n">c21</span> <span class="o">+</span> <span class="n">a22</span><span class="o">*</span><span class="n">c22</span> <span class="o">+</span> <span class="n">a23</span><span class="o">*</span><span class="n">c23</span> <span class="o">+</span> <span class="n">a24</span><span class="o">*</span><span class="n">c24</span> <span class="o">+</span> <span class="n">a25</span><span class="o">*</span><span class="n">c25</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;det Y baris 2 = </span><span class="si">{</span><span class="n">det2</span><span class="si">}</span><span class="s2"> atau bisa dibulatkan menjadi </span><span class="si">{</span><span class="n">det2</span><span class="o">.</span><span class="n">round</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="c1">#baris 3</span>
+<span class="n">det3</span> <span class="o">=</span> <span class="n">a31</span><span class="o">*</span><span class="n">c31</span> <span class="o">+</span> <span class="n">a32</span><span class="o">*</span><span class="n">c32</span> <span class="o">+</span> <span class="n">a33</span><span class="o">*</span><span class="n">c33</span> <span class="o">+</span> <span class="n">a34</span><span class="o">*</span><span class="n">c34</span> <span class="o">+</span> <span class="n">a35</span><span class="o">*</span><span class="n">c35</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;det Y baris 3 = </span><span class="si">{</span><span class="n">det3</span><span class="si">}</span><span class="s2"> atau bisa dibulatkan menjadi </span><span class="si">{</span><span class="n">det3</span><span class="o">.</span><span class="n">round</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="c1">#baris 4</span>
+<span class="n">det4</span> <span class="o">=</span> <span class="n">a41</span><span class="o">*</span><span class="n">c41</span> <span class="o">+</span> <span class="n">a42</span><span class="o">*</span><span class="n">c42</span> <span class="o">+</span> <span class="n">a43</span><span class="o">*</span><span class="n">c43</span> <span class="o">+</span> <span class="n">a44</span><span class="o">*</span><span class="n">c44</span> <span class="o">+</span> <span class="n">a45</span><span class="o">*</span><span class="n">c45</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;det Y baris 4 = </span><span class="si">{</span><span class="n">det4</span><span class="si">}</span><span class="s2"> atau bisa dibulatkan menjadi </span><span class="si">{</span><span class="n">det4</span><span class="o">.</span><span class="n">round</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="c1">#baris 5</span>
+<span class="n">det5</span> <span class="o">=</span> <span class="n">a51</span><span class="o">*</span><span class="n">c51</span> <span class="o">+</span> <span class="n">a52</span><span class="o">*</span><span class="n">c52</span> <span class="o">+</span> <span class="n">a53</span><span class="o">*</span><span class="n">c53</span> <span class="o">+</span> <span class="n">a54</span><span class="o">*</span><span class="n">c54</span> <span class="o">+</span> <span class="n">a55</span><span class="o">*</span><span class="n">c55</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;det Y baris 5 = </span><span class="si">{</span><span class="n">det5</span><span class="si">}</span><span class="s2"> atau bisa dibulatkan menjadi </span><span class="si">{</span><span class="n">det5</span><span class="o">.</span><span class="n">round</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Menghitung matriks determinan dengan menggunakan fungsi:&quot;</span><span class="p">)</span>
+<span class="n">det_Y</span> <span class="o">=</span> <span class="n">det</span><span class="p">(</span><span class="n">Y</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">det_Y</span><span class="p">,</span><span class="s2">&quot;atau bisa dibulatkan menjadi&quot;</span><span class="p">,</span> <span class="n">det_Y</span><span class="o">.</span><span class="n">round</span><span class="p">())</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Ini menunjukkan bahwa kita menghitung salah satu barisnya saja, karna hasilnya sama dan sama juga dengan mencari determinan menggunakan fungsi&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>det Y baris 1 = -170.0000000000001 atau bisa dibulatkan menjadi -170.0
+det Y baris 2 = -170.00000000000003 atau bisa dibulatkan menjadi -170.0
+det Y baris 3 = -170.00000000000006 atau bisa dibulatkan menjadi -170.0
+det Y baris 4 = -169.99999999999997 atau bisa dibulatkan menjadi -170.0
+det Y baris 5 = -170.00000000000006 atau bisa dibulatkan menjadi -170.0
+
+Menghitung matriks determinan dengan menggunakan fungsi:
+-170.00000000000006 atau bisa dibulatkan menjadi -170.0
+
+Ini menunjukkan bahwa kita menghitung salah satu barisnya saja, karna hasilnya sama dan sama juga dengan mencari determinan menggunakan fungsi
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#pembuktian bahwa matriks</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Matriks Kofaktor:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">cofactor_matrix</span><span class="p">,</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">Trans_Kof</span> <span class="o">=</span> <span class="n">cofactor</span><span class="o">.</span><span class="n">transpose</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Transpose Matrix dari kofaktornya = </span><span class="se">\n</span><span class="si">{</span><span class="n">Trans_Kof</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">()</span>
+<span class="n">inversY</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="n">det1</span><span class="o">*</span> <span class="n">Trans_Kof</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Hasil Invers Matrix dari cofactor adalah = </span><span class="se">\n</span><span class="si">{</span><span class="n">inversY</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Kita bandingkan jika mencari invers langsung dari matriks asal bukan dari cofactor matriks yang telah ditranpose kemudian diinverskan&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Invers dari matriks asal adalah</span><span class="se">\n</span><span class="s2"> </span><span class="si">{</span><span class="n">invers</span><span class="p">(</span><span class="n">Y</span><span class="p">)</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Dari keduanya menunjukkan hasil yang sama yang berarti kita boleh invers dari cofactor matriks yang telah ditranpose kemudian diinverskan ataupun dari matriks asalnya&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Matriks Kofaktor:
+[[ -82.   69.   87.   10. -173.]
+ [  54.  -33.  -49.   10.   31.]
+ [  -6.   32.   -4.  -20.    6.]
+ [  36.  -22.   24.  -50.  -36.]
+ [ -28.  -49.  -47.   20.  113.]] 
+
+Transpose Matrix dari kofaktornya = 
+[[ -82.   54.   -6.   36.  -28.]
+ [  69.  -33.   32.  -22.  -49.]
+ [  87.  -49.   -4.   24.  -47.]
+ [  10.   10.  -20.  -50.   20.]
+ [-173.   31.    6.  -36.  113.]]
+
+Hasil Invers Matrix dari cofactor adalah = 
+[[ 0.5 -0.3  0.  -0.2  0.2]
+ [-0.4  0.2 -0.2  0.1  0.3]
+ [-0.5  0.3  0.  -0.1  0.3]
+ [-0.1 -0.1  0.1  0.3 -0.1]
+ [ 1.  -0.2 -0.   0.2 -0.7]]
+
+Kita bandingkan jika mencari invers langsung dari matriks asal bukan dari cofactor matriks yang telah ditranpose kemudian diinverskan
+
+Invers dari matriks asal adalah
+ [[ 0.5 -0.3  0.  -0.2  0.2]
+ [-0.4  0.2 -0.2  0.1  0.3]
+ [-0.5  0.3  0.  -0.1  0.3]
+ [-0.1 -0.1  0.1  0.3 -0.1]
+ [ 1.  -0.2 -0.   0.2 -0.7]]
+
+Dari keduanya menunjukkan hasil yang sama yang berarti kita boleh invers dari cofactor matriks yang telah ditranpose kemudian diinverskan ataupun dari matriks asalnya
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -623,9 +980,17 @@ terbukti bahwa det(cobaC) = det(cobaA)det(cobaB)
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#syarat-mencari-determinan-matriks">syarat mencari determinan matriks :</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sifat-sifat-determinan">sifat sifat determinan</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">DETERMINANT</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#syarat-mencari-determinan-matriks">Syarat Mencari Determinan Matriks :</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sifat-sifat-determinan">Sifat-sifat Determinan</a></li>
 </ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#cofactor">COFACTOR</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#menghitung-invers-matriks-5-x-5-dengan-cofactor">Menghitung Invers Matriks 5 X 5 dengan cofactor</a></li>
+</ul>
+</li>
+</ul>
+
   </nav></div>
 
 </div></div>
