@@ -62,6 +62,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'Eigenvalues_Eigenvectors';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Transformasi Linier" href="Transformasi.html" />
+    <link rel="prev" title="DETERMINANT" href="determinant.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -123,8 +125,6 @@
       
       
       
-        
-      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -178,12 +178,13 @@
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="SistemLinier.html">Sistem Linier</a></li>
 <li class="toctree-l1"><a class="reference internal" href="AljabarMatriks.html">Aljabar Matriks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="MatriksInvers.html">Matriks invers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="determinant.html">DETERMINANT</a></li>
 
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Eigenvalues dan Eigenvectors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Transformasi.html">Transformasi Linier</a></li>
 </ul>
 
@@ -357,7 +358,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -373,6 +376,14 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-i-x-0-ax-x">(A - λI) x = 0 Ax = λx</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -396,6 +407,7 @@ di mana \)</span>v<span class="math notranslate nohighlight">\( adalah eigenvect
 <p>Eigenvectors adalah vektor non-nol yang, ketika dikalikan dengan matriks, hanya mengalami perubahan skalar. Dengan kata lain, sebuah vektor
 <span class="math notranslate nohighlight">\(v\)</span> adalah eigenvector dari matriks <span class="math notranslate nohighlight">\(A\)</span> jika perkalian <span class="math notranslate nohighlight">\(Av\)</span> hanya menghasilkan skalar dari <span class="math notranslate nohighlight">\(v\)</span>, yaitu <span class="math notranslate nohighlight">\(λv\)</span>, di mana <span class="math notranslate nohighlight">\(λ\)</span> adalah eigenvalue yang sesuai. Eigenvectors menunjukkan arah di mana transformasi oleh matriks dilakukan tanpa memutar, hanya mengubah panjang vektor.</p>
 <p>Kombinasi dari eigenvalues dan eigenvectors memungkinkan kita untuk memahami transformasi yang dilakukan oleh matriks</p>
+<p>Code 1</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -421,6 +433,77 @@ di mana \)</span>v<span class="math notranslate nohighlight">\( adalah eigenvect
 </div>
 </div>
 </div>
+<section id="a-i-x-0-ax-x">
+<h2>(A - λI) x = 0 Ax = λx<a class="headerlink" href="#a-i-x-0-ax-x" title="Link to this heading">#</a></h2>
+<p>Merupakan matriks singular (matriks yang determinannya = 0)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># Definisikan matriks A</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">],[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]])</span>
+
+<span class="c1"># Fungsi untuk menghitung determinan matriks (A - λI)</span>
+<span class="k">def</span> <span class="nf">determinan</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">lamb</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">det</span><span class="p">(</span><span class="n">A</span> <span class="o">-</span> <span class="n">lamb</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">identity</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+
+<span class="c1"># Fungsi untuk menemukan eigenvalues (nilai λ yang membuat determinan = 0)</span>
+<span class="k">def</span> <span class="nf">find_eigenvalues</span><span class="p">(</span><span class="n">A</span><span class="p">):</span>
+    <span class="c1"># Membuat fungsi lambda untuk determinan matriks (A - λI)</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">lamb</span><span class="p">:</span> <span class="n">determinan</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">lamb</span><span class="p">)</span>
+    <span class="c1"># Mencari nilai λ yang membuat determinan matriks (A - λI) mendekati 0</span>
+    <span class="n">eigenvalues</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">lamb</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">1000</span><span class="p">):</span>  <span class="c1"># Rentang pencarian nilai λ</span>
+        <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">isclose</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">lamb</span><span class="p">),</span> <span class="mi">0</span><span class="p">,</span> <span class="n">atol</span><span class="o">=</span><span class="mf">1e-3</span><span class="p">):</span>  <span class="c1"># Toleransi mendekati 0</span>
+            <span class="n">eigenvalues</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">lamb</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">eigenvalues</span><span class="p">)</span>  <span class="c1"># Mengembalikan nilai λ unik</span>
+
+<span class="c1"># Menghitung eigenvalues</span>
+<span class="n">eigenvalues</span> <span class="o">=</span> <span class="n">find_eigenvalues</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Eigenvalues:&quot;</span><span class="p">,</span> <span class="n">eigenvalues</span><span class="p">)</span>
+
+<span class="c1"># Menghitung eigenvectors untuk setiap eigenvalue</span>
+<span class="k">for</span> <span class="n">lamb</span> <span class="ow">in</span> <span class="n">eigenvalues</span><span class="p">:</span>
+    <span class="c1"># (A - λI)x = 0</span>
+    <span class="n">eigenvector</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">null_space</span><span class="p">(</span><span class="n">A</span> <span class="o">-</span> <span class="n">lamb</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">identity</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Eigenvector untuk eigenvalue </span><span class="si">{</span><span class="n">lamb</span><span class="si">}</span><span class="s2">:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">eigenvector</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Eigenvalues: []
+</pre></div>
+</div>
+</div>
+</div>
+<p>Code 2</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">numpy.linalg</span> <span class="kn">import</span> <span class="n">eig</span>
+
+<span class="c1"># Definisikan matriks A</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">],[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]])</span>
+
+<span class="c1"># Hitung eigenvalues dan eigenvectors</span>
+<span class="n">eigenvalues</span><span class="p">,</span> <span class="n">eigenvectors</span> <span class="o">=</span> <span class="n">eig</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Eigenvalues:&quot;</span><span class="p">,</span> <span class="n">eigenvalues</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Eigenvectors:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">eigenvectors</span><span class="o">.</span><span class="n">round</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Eigenvalues: [-1.  5.]
+Eigenvectors:
+ [[-1. -1.]
+ [ 0. -1.]]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Karna hasil dri code 1 atau 2 sama, kita bisa bebas memilih menggunakan yang mana</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -453,6 +536,24 @@ di mana \)</span>v<span class="math notranslate nohighlight">\( adalah eigenvect
                 <footer class="prev-next-footer">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="determinant.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">DETERMINANT</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Transformasi.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Transformasi Linier</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -460,7 +561,20 @@ di mana \)</span>v<span class="math notranslate nohighlight">\( adalah eigenvect
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"></div>
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-i-x-0-ax-x">(A - λI) x = 0 Ax = λx</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

@@ -62,7 +62,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'Transformasi';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="DETERMINANT" href="determinant.html" />
+    <link rel="prev" title="Eigenvalues dan Eigenvectors" href="Eigenvalues_Eigenvectors.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -183,6 +183,7 @@
 <li class="toctree-l1"><a class="reference internal" href="MatriksInvers.html">Matriks invers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="determinant.html">DETERMINANT</a></li>
 
+<li class="toctree-l1"><a class="reference internal" href="Eigenvalues_Eigenvectors.html">Eigenvalues dan Eigenvectors</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Transformasi Linier</a></li>
 </ul>
 
@@ -394,8 +395,8 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#macam-macam-transformasi-linier-pada-matriks">Macam-macam Transformasi Linier pada Matriks</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#refleksi-matriks">Refleksi Matriks</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#refleksi-terhadap-sumbu-y">Refleksi terhadap sumbu y</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#refleksi-terhadap-sumbu-x">Refleksi terhadap sumbu x</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#refleksi-terhadap-sumbu-y">Refleksi terhadap sumbu y</a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rotasi-matriks">Rotasi Matriks</a></li>
@@ -430,9 +431,9 @@ v ∈ −−−−−Transformation−−−−→ w = T (v) ∈ W
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="c1"># Definisikan matriks A</span>
-<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
               <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
-              <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]])</span>
+              <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span>
 
 <span class="c1"># Fungsi transformasi linier</span>
 <span class="k">def</span> <span class="nf">linear_transformation</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
@@ -449,7 +450,7 @@ v ∈ −−−−−Transformation−−−−→ w = T (v) ∈ W
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hasil transformasi: [2 3 0]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hasil transformasi: [4 3 1]
 </pre></div>
 </div>
 </div>
@@ -515,8 +516,8 @@ v ∈ −−−−−Transformation−−−−→ w = T (v) ∈ W
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="c1"># Definisikan matriks transformasi T</span>
-<span class="n">T</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
-              <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">]])</span>
+<span class="n">T</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
+              <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]])</span>
 
 <span class="c1"># Fungsi untuk transformasi linier</span>
 <span class="k">def</span> <span class="nf">linear_transformation</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>
@@ -535,8 +536,8 @@ v ∈ −−−−−Transformation−−−−→ w = T (v) ∈ W
     <span class="k">return</span> <span class="n">Tu_plus_v</span><span class="p">,</span> <span class="n">Tu_plus_Tv</span>
 
 <span class="c1"># Contoh vektor u dan v</span>
-<span class="n">u</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
-<span class="n">v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
+<span class="n">u</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+<span class="n">v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
 
 <span class="c1"># Panggil fungsi dan cetak hasilnya</span>
 <span class="n">Tu_plus_v</span><span class="p">,</span> <span class="n">Tu_plus_Tv</span> <span class="o">=</span> <span class="n">linear_transformation</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
@@ -547,8 +548,8 @@ v ∈ −−−−−Transformation−−−−→ w = T (v) ∈ W
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Transformasi linier memenuhi sifat T(u + v) = T(u) + T(v)
-T(u + v): [14 22]
-T(u) + T(v): [14 22]
+T(u + v): [11 25]
+T(u) + T(v): [11 25]
 </pre></div>
 </div>
 </div>
@@ -569,8 +570,8 @@ T(u) + T(v): [14 22]
     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
 
 <span class="c1"># Contoh vektor v dan skalar alpha</span>
-<span class="n">v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span>
-<span class="n">alpha</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<span class="n">alpha</span> <span class="o">=</span> <span class="mi">2</span>
 
 <span class="c1"># Hitung T(alpha * v)</span>
 <span class="n">T_alpha_v</span> <span class="o">=</span> <span class="n">linear_transformation</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">*</span> <span class="n">v</span><span class="p">)</span>
@@ -591,8 +592,8 @@ T(u) + T(v): [14 22]
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Transformasi linier memenuhi sifat T(alpha * v) = alpha * T(v)
-T(alpha * v): [ 51 117]
-alpha * T(v): [ 51 117]
+T(alpha * v): [14 30]
+alpha * T(v): [14 30]
 </pre></div>
 </div>
 </div>
@@ -603,26 +604,98 @@ alpha * T(v): [ 51 117]
 <h2>Macam-macam Transformasi Linier pada Matriks<a class="headerlink" href="#macam-macam-transformasi-linier-pada-matriks" title="Link to this heading">#</a></h2>
 <section id="refleksi-matriks">
 <h3>Refleksi Matriks<a class="headerlink" href="#refleksi-matriks" title="Link to this heading">#</a></h3>
-<p>Refleksi mengubah arah vektor dengan memantulkannya melalui suatu garis atau bidang.</p>
+<p>Tranformasi Linier dengan Refleksi atau pencerminan pada tranformasi linear adalah adalah salah satu metode tranformasi linear yang digunakan untuk mencerminkan suatu Node dengan fungsi matrix. Berikut adalah sifat-sifat Refleksi:</p>
+<ol class="arabic simple">
+<li><p>Objek yang direfleksikan tidak mengalami perubahan benntuk dan ukuran</p></li>
+<li><p>Jarak objek dari cermin (sumbu X/Y) adalah sama dengan jarak bayangan dengan cermin tersbut.</p></li>
+</ol>
+<ul class="simple">
+<li><p>a. Untuk bisa dicerminkan ke sumbu X fungsi matrix harus seperti berikut:</p></li>
+</ul>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{equation*}
 v=
 \begin{bmatrix}
-2\\3
+1&amp;0\\0&amp;-1
 \end{bmatrix}
 \end{equation*}
 \end{split}\]</div>
-<p>refleksi terhadap sumbu x akan menghasilkan vektor</p>
+<ul class="simple">
+<li><p>b. Untuk bisa dicerminkan ke sumbu Y fungsi matrix harus seperti berikut:</p></li>
+</ul>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{equation*}
 v'=
 \begin{bmatrix}
-2\\-3
+-1&amp;0\\0&amp;1
 \end{bmatrix}
 \end{equation*}
 \end{split}\]</div>
+<section id="refleksi-terhadap-sumbu-x">
+<h4>Refleksi terhadap sumbu x<a class="headerlink" href="#refleksi-terhadap-sumbu-x" title="Link to this heading">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># Membuat matriks 2x2 dengan nilai awal</span>
+<span class="n">matriks</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]])</span>
+
+<span class="c1"># Melakukan cermin pada sumbu x dengan mengalikan baris kedua dengan -1</span>
+<span class="n">matriks</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">matriks</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">:]</span> <span class="o">*</span> <span class="o">-</span><span class="mi">1</span>
+
+<span class="c1"># Menampilkan matriks setelah transformasi cermin</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Matriks setelah transformasi cermin pada sumbu x:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">matriks</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Matriks setelah transformasi cermin pada sumbu x:
+[[ 1  2]
+ [-3 -4]]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># Matriks refleksi terhadap sumbu x</span>
+<span class="n">reflection_matrix</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">]])</span>
+
+<span class="c1"># Vektor asli</span>
+<span class="n">original_vector</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+
+<span class="c1"># Menerapkan refleksi menggunakan matriks refleksi</span>
+<span class="n">reflected_vector</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">reflection_matrix</span><span class="p">,</span> <span class="n">original_vector</span><span class="p">)</span>
+
+<span class="c1"># Plot vektor asli dan hasil refleksi</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">quiver</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">original_vector</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">original_vector</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">angles</span><span class="o">=</span><span class="s1">&#39;xy&#39;</span><span class="p">,</span> <span class="n">scale_units</span><span class="o">=</span><span class="s1">&#39;xy&#39;</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Vektor Asli&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">quiver</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">reflected_vector</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">reflected_vector</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">angles</span><span class="o">=</span><span class="s1">&#39;xy&#39;</span><span class="p">,</span> <span class="n">scale_units</span><span class="o">=</span><span class="s1">&#39;xy&#39;</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Hasil Refleksi (Sumbu X)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;X axis&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Y axis&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Refleksi Matriks Identitas (Sumbu X)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">set_aspect</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">,</span> <span class="n">adjustable</span><span class="o">=</span><span class="s1">&#39;box&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/a6a4ee566ba4912e825f55655697b6ff5f297c33fffdb456de910161ff6a79d8.png" src="_images/a6a4ee566ba4912e825f55655697b6ff5f297c33fffdb456de910161ff6a79d8.png" />
+</div>
+</div>
+</section>
 <section id="refleksi-terhadap-sumbu-y">
 <h4>Refleksi terhadap sumbu y<a class="headerlink" href="#refleksi-terhadap-sumbu-y" title="Link to this heading">#</a></h4>
 <div class="cell docutils container">
@@ -630,7 +703,7 @@ v'=
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="c1"># Membuat matriks 2x2 dengan nilai awal</span>
-<span class="n">matriks</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span>
+<span class="n">matriks</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]])</span>
 
 <span class="c1"># Melakukan cermin pada sumbu y dengan mengalikan kolom pertama dengan -1</span>
 <span class="n">matriks</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">matriks</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="o">-</span><span class="mi">1</span>
@@ -643,8 +716,8 @@ v'=
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Matriks setelah transformasi cermin pada sumbu y:
-[[-1  0]
- [ 0  1]]
+[[-1  2]
+ [-3  4]]
 </pre></div>
 </div>
 </div>
@@ -658,7 +731,7 @@ v'=
 <span class="n">identity_matrix</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span>
 
 <span class="c1"># Vektor asli</span>
-<span class="n">original_vector</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<span class="n">original_vector</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
 
 <span class="c1"># Menerapkan proyeksi menggunakan matriks identitas</span>
 <span class="n">projected_vector</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">identity_matrix</span><span class="p">,</span> <span class="n">original_vector</span><span class="p">)</span>
@@ -685,110 +758,38 @@ v'=
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/2f3079031c99a002695fb6457ffc6b3074352573e032928e627550c8a04931e1.png" src="_images/2f3079031c99a002695fb6457ffc6b3074352573e032928e627550c8a04931e1.png" />
-</div>
-</div>
-</section>
-<section id="refleksi-terhadap-sumbu-x">
-<h4>Refleksi terhadap sumbu x<a class="headerlink" href="#refleksi-terhadap-sumbu-x" title="Link to this heading">#</a></h4>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-
-<span class="c1"># Membuat matriks 2x2 dengan nilai awal</span>
-<span class="n">matriks</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span>
-
-<span class="c1"># Melakukan cermin pada sumbu x dengan mengalikan baris kedua dengan -1</span>
-<span class="n">matriks</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">matriks</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">:]</span> <span class="o">*</span> <span class="o">-</span><span class="mi">1</span>
-
-<span class="c1"># Menampilkan matriks setelah transformasi cermin</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Matriks setelah transformasi cermin pada sumbu x:&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">matriks</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Matriks setelah transformasi cermin pada sumbu x:
-[[ 1  0]
- [ 0 -1]]
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-
-<span class="c1"># Matriks refleksi terhadap sumbu x</span>
-<span class="n">reflection_matrix</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]])</span>
-
-<span class="c1"># Vektor asli</span>
-<span class="n">original_vector</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
-
-<span class="c1"># Menerapkan refleksi menggunakan matriks refleksi</span>
-<span class="n">reflected_vector</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">reflection_matrix</span><span class="p">,</span> <span class="n">original_vector</span><span class="p">)</span>
-
-<span class="c1"># Plot vektor asli dan hasil refleksi</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">quiver</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">original_vector</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">original_vector</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">angles</span><span class="o">=</span><span class="s1">&#39;xy&#39;</span><span class="p">,</span> <span class="n">scale_units</span><span class="o">=</span><span class="s1">&#39;xy&#39;</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Vektor Asli&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">quiver</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">reflected_vector</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">reflected_vector</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">angles</span><span class="o">=</span><span class="s1">&#39;xy&#39;</span><span class="p">,</span> <span class="n">scale_units</span><span class="o">=</span><span class="s1">&#39;xy&#39;</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Hasil Refleksi (Sumbu X)&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;X axis&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Y axis&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Refleksi Matriks Identitas (Sumbu X)&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">set_aspect</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">,</span> <span class="n">adjustable</span><span class="o">=</span><span class="s1">&#39;box&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/af86a56fc78a54f83f73d240025c104342568f6604086ebc62b6770182cb45ac.png" src="_images/af86a56fc78a54f83f73d240025c104342568f6604086ebc62b6770182cb45ac.png" />
+<img alt="_images/2d287c0a315ec1f1f8009fb514740c299341ffc3c17d18ec2a5a561e07a768ea.png" src="_images/2d287c0a315ec1f1f8009fb514740c299341ffc3c17d18ec2a5a561e07a768ea.png" />
 </div>
 </div>
 </section>
 </section>
 <section id="rotasi-matriks">
 <h3>Rotasi Matriks<a class="headerlink" href="#rotasi-matriks" title="Link to this heading">#</a></h3>
-<p>Rotasi mengubah arah vektor dengan memutarnya sebesar sudut tertentu.</p>
-<p>rotasi sebesar =</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
+<p>Rotasi matriks adalah jenis transformasi linier yang digunakan untuk memutar objek dalam ruang sebesar sudut tertentu, baik dalam dimensi 2D maupun 3D. Transformasi rotasi sangat berguna dalam berbagai aplikasi seperti grafika komputer, animasi, pemrosesan citra, dan rekayasa. Rotasi matriks diaplikasikan pada vektor-vektor yang merepresentasikan posisi objek dalam ruang. Hasil rotasi dari matriks rotasi adalah vektor yang merepresentasikan posisi objek setelah rotasi diaplikasikan.</p>
+<p>Rotasi matriks umumnya dinyatakan dalam dua dimensi dan tiga dimensi:</p>
+<ul class="simple">
+<li><p>Dalam dimensi 2:
+$<span class="math notranslate nohighlight">\(
+\begin{align*}
+R=
 \begin{bmatrix}
-π\\2
+cos(θ)&amp;-sin(θ)\\
+sin(θ)&amp;cos(θ)\\
 \end{bmatrix}
-\end{split}\]</div>
-<p>(90 derajat) terhadap sumbu z akan mengubah vektor</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{equation*}
-v=
-\begin{bmatrix}
-1\\0
-\end{bmatrix}
-\end{equation*}
-\end{split}\]</div>
-<p>menjadi</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{equation*}
-v'=
-\begin{bmatrix}
-0\\1
-\end{bmatrix}
-\end{equation*}
-\end{split}\]</div>
+\end{align*}
+\)</span>$</p></li>
+</ul>
+<p>Di sini, <span class="math notranslate nohighlight">\(θ\)</span> adalah sudut rotasi yang diberikan dalam radian. Matriks rotasi ini akan memutar objek sebesar <span class="math notranslate nohighlight">\(θ\)</span> searah jarum jam jika <span class="math notranslate nohighlight">\(θ\)</span> positif, atau berlawanan arah jarum jam jika <span class="math notranslate nohighlight">\(θ\)</span> negatif.</p>
+<ul class="simple">
+<li><p>Dalam dimensi 3:</p></li>
+</ul>
+<p>Rotasi dalam tiga dimensi lebih kompleks karena dapat terjadi rotasi di sekitar sumbu yang berbeda. Misalnya, rotasi bisa terjadi di sekitar sumbu-x, sumbu-y, atau sumbu-z.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="c1"># Membuat matriks 2x2 dengan nilai awal</span>
-<span class="n">matriks</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span>
+<span class="n">matriks</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]])</span>
 
 <span class="c1"># Mendefinisikan matriks rotasi untuk rotasi 90 derajat searah jarum jam</span>
 <span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>  <span class="c1"># Mengubah derajat menjadi radian</span>
@@ -806,8 +807,8 @@ v'=
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Matriks setelah rotasi 90 derajat searah jarum jam:
-[[ 0. -1.]
- [ 1.  0.]]
+[[-3. -4.]
+ [ 1.  2.]]
 </pre></div>
 </div>
 </div>
@@ -817,7 +818,7 @@ v'=
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="c1"># Membuat matriks 2x2 dengan nilai awal</span>
-<span class="n">matriks</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span>
+<span class="n">matriks</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]])</span>
 
 <span class="c1"># Melakukan rotasi 90 derajat berlawanan arah jarum jam</span>
 <span class="n">matriks_rotasi</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">rot90</span><span class="p">(</span><span class="n">matriks</span><span class="p">)</span>
@@ -830,8 +831,8 @@ v'=
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Matriks setelah rotasi 90 derajat berlawanan arah jarum jam:
-[[0 1]
- [1 0]]
+[[2 4]
+ [1 3]]
 </pre></div>
 </div>
 </div>
@@ -848,7 +849,7 @@ v'=
 <span class="n">rotation_matrix</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">),</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)],</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)]])</span>
 
 <span class="c1"># Vektor asli</span>
-<span class="n">original_vector</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<span class="n">original_vector</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
 
 <span class="c1"># Menerapkan rotasi menggunakan matriks</span>
 <span class="n">rotated_vector</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">rotation_matrix</span><span class="p">,</span> <span class="n">original_vector</span><span class="p">)</span>
@@ -872,20 +873,51 @@ v'=
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/407ae2dd8cd6d18a3c07684511ce111698c020dc08ab8bbdf5bcd4e88f653932.png" src="_images/407ae2dd8cd6d18a3c07684511ce111698c020dc08ab8bbdf5bcd4e88f653932.png" />
+<img alt="_images/8a245eec53f92d56508aa83861ad350c010d5e60d621add9fdd6cdc5923640e1.png" src="_images/8a245eec53f92d56508aa83861ad350c010d5e60d621add9fdd6cdc5923640e1.png" />
 </div>
 </div>
 </section>
 <section id="translasi-matriks">
 <h3>Translasi Matriks<a class="headerlink" href="#translasi-matriks" title="Link to this heading">#</a></h3>
-<p>Translasi menggeser vektor secara paralel.</p>
-<p>Jika memiliki vektor =</p>
+<p>Translasi matriks adalah jenis transformasi linier yang digunakan untuk menggeser objek dalam ruang. Transformasi translasi berguna untuk memindahkan objek dari satu lokasi ke lokasi lain dalam koordinat 2D atau 3D.</p>
+<p>Matriks translasi umumnya memiliki bentuk seperti ini:</p>
+<ul class="simple">
+<li><p>Dalam dimensi 2:
+$<span class="math notranslate nohighlight">\(
+\begin{align*}
+A=
+\begin{bmatrix}
+1&amp;0&amp;t_x\\
+0&amp;1&amp;t_y\\
+0&amp;0&amp;1
+\end{bmatrix}
+\end{align*}
+\)</span>$</p></li>
+</ul>
+<p>Di sini, <span class="math notranslate nohighlight">\(t_x\)</span> dan <span class="math notranslate nohighlight">\(t_y\)</span> adalah pergeseran yang diberikan dalam sumbu-x dan sumbu-y, secara berturut-turut.</p>
+<ul class="simple">
+<li><p>Dalam dimensi 3:
+$<span class="math notranslate nohighlight">\(
+\begin{align*}
+A=
+\begin{bmatrix}
+1&amp;0&amp;0&amp;t_x\\
+0&amp;1&amp;0&amp;t_y\\
+0&amp;0&amp;1&amp;t_z\\
+0&amp;0&amp;0&amp;1
+\end{bmatrix}
+\end{align*}
+\)</span>$</p></li>
+</ul>
+<p>Di sini, <span class="math notranslate nohighlight">\(t_x,t_y,\)</span> dan <span class="math notranslate nohighlight">\(t_z\)</span> adalah pergeseran yang diberikan dalam sumbu-x, sumbu-y, dan sumbu-z, secara berturut-turut.</p>
+<p>Ketika matriks translasi ini diterapkan pada vektor <span class="math notranslate nohighlight">\((x,y)\)</span> atau <span class="math notranslate nohighlight">\((x,y,z)\)</span>, koordinat objek akan ditambahkan dengan nilai <span class="math notranslate nohighlight">\(t_x,t_y,\)</span> dan <span class="math notranslate nohighlight">\(t_z\)</span> masing-masing, sehingga menghasilkan pergeseran sesuai dengan yang diinginkan.</p>
+<p>Contoh memiliki vektor =</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{equation*}
 v=
 \begin{bmatrix}
-2\\3
+1\\3
 \end{bmatrix}
 \end{equation*}
 \end{split}\]</div>
@@ -893,7 +925,7 @@ v=
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{bmatrix}
-1\\2
+2\\1
 \end{bmatrix}
 \end{split}\]</div>
 <p>akan menghasilkan vektor</p>
@@ -902,7 +934,7 @@ v=
 \begin{equation*}
 v'=
 \begin{bmatrix}
-3\\5
+3\\4
 \end{bmatrix}
 \end{equation*}
 \end{split}\]</div>
@@ -912,10 +944,10 @@ v'=
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
 <span class="c1"># Matriks translasi</span>
-<span class="n">translation_matrix</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span>  <span class="c1"># Translasi sebesar (2, 3)</span>
+<span class="n">translation_matrix</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span>  <span class="c1"># Translasi sebesar (2, 3)</span>
 
 <span class="c1"># Vektor asli (ditambahkan dimensi ke-3 untuk koordinat homogen)</span>
-<span class="n">original_vector_homogeneous</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+<span class="n">original_vector_homogeneous</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
 
 <span class="c1"># Menerapkan translasi menggunakan matriks</span>
 <span class="n">translated_vector_homogeneous</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">translation_matrix</span><span class="p">,</span> <span class="n">original_vector_homogeneous</span><span class="p">)</span>
@@ -942,33 +974,44 @@ v'=
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/b63a8bfab24ba21135a7bc109d62db98aee78f0055b16e91c2a4ea089f7eb637.png" src="_images/b63a8bfab24ba21135a7bc109d62db98aee78f0055b16e91c2a4ea089f7eb637.png" />
+<img alt="_images/e243d51a23179a110ab7f6de2217a2cea4737dce9b173994b5e95854dd7e25db.png" src="_images/e243d51a23179a110ab7f6de2217a2cea4737dce9b173994b5e95854dd7e25db.png" />
 </div>
 </div>
 </section>
 <section id="dilatasi-matriks">
 <h3>Dilatasi Matriks<a class="headerlink" href="#dilatasi-matriks" title="Link to this heading">#</a></h3>
-<p>Dilatasi mengubah ukuran vektor dengan mengalikannya dengan suatu skalar.</p>
-<p>Jika memiliki vektor</p>
+<p>Transformasi linier scaling adalah jenis transformasi linear di mana setiap koordinat dari objek digandakan atau dikurangi dengan faktor skalar tertentu. Ini dilakukan dengan memperbesar (scaling up) atau memperkecil (scaling down) objek dalam ruang. Misalnya, dalam 2 dimensi, scaling akan mengubah ukuran objek di sepanjang sumbu x dan sumbu y.</p>
+<p>Transformasi linier scaling dalam matriks dapat direpresentasikan dengan matriks transformasi khusus. Misalkan <span class="math notranslate nohighlight">\(v_x\)</span> dan <span class="math notranslate nohighlight">\(v_y\)</span>  adalah faktor skalar untuk sumbu x dan sumbu y, masing-masing. Maka, matriks transformasi linier scaling akan memiliki bentuk seperti ini:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{equation*}
 v=
 \begin{bmatrix}
-2\\3
+v_x&amp;0\\0&amp;v_y
 \end{bmatrix}
 \end{equation*}
 \end{split}\]</div>
-<p>dilatasi dengan faktor 2 akan menghasilkan vektor</p>
+<p>Ketika matriks transformasi ini diterapkan pada vektor (<span class="math notranslate nohighlight">\(x, y\)</span>) hasilnya adalah:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
-\begin{equation*}
-v'=
+\begin{align*}
 \begin{bmatrix}
-4\\6
+v_x&amp;0\\
+0&amp;v_y
 \end{bmatrix}
-\end{equation*}
+\begin{bmatrix}
+x\\
+y\\
+\end{bmatrix}
+=
+\begin{bmatrix}
+v_x.x\\
+v_y.y\\
+\end{bmatrix}
+\end{align*}
 \end{split}\]</div>
+<p>Ini artinya, koordinat <span class="math notranslate nohighlight">\((x,y)\)</span> akan digandakan atau dikurangi dengan faktor skalar <span class="math notranslate nohighlight">\(v_x\)</span> dan <span class="math notranslate nohighlight">\(v_y\)</span>, masing-masing, untuk mendapatkan koordinat baru <span class="math notranslate nohighlight">\((v_x.x,v_y.y)\)</span>.</p>
+<p>Contoh penggunaan scaling bisa dalam berbagai aplikasi, seperti dalam grafika komputer untuk memperbesar atau memperkecil objek, dalam analisis data untuk menormalkan data pada rentang tertentu, atau dalam pemrosesan gambar untuk mengubah ukuran gambar.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -978,7 +1021,7 @@ v'=
 <span class="n">scaling_matrix</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">]])</span>  <span class="c1"># Contoh faktor skala 2 untuk sumbu x dan 3 untuk sumbu y</span>
 
 <span class="c1"># Vektor asli</span>
-<span class="n">original_vector</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<span class="n">original_vector</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
 
 <span class="c1"># Menerapkan dilatasi menggunakan matriks</span>
 <span class="n">scaled_vector</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">scaling_matrix</span><span class="p">,</span> <span class="n">original_vector</span><span class="p">)</span>
@@ -1002,13 +1045,13 @@ v'=
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/08cfab0b382b5f0f195ac0662a2c2d013673767a22a0737257b453e532050953.png" src="_images/08cfab0b382b5f0f195ac0662a2c2d013673767a22a0737257b453e532050953.png" />
+<img alt="_images/31a178f621a3171344f920ee32e459241ee40bb5a12937c749d62f5d17348698.png" src="_images/31a178f621a3171344f920ee32e459241ee40bb5a12937c749d62f5d17348698.png" />
 </div>
 </div>
 </section>
 <section id="proyeksi-matriks">
 <h3>Proyeksi Matriks<a class="headerlink" href="#proyeksi-matriks" title="Link to this heading">#</a></h3>
-<p>Proyeksi mengurangi dimensi vektor dengan memproyeksikannya ke suatu garis atau bidang.</p>
+<p>Proyeksi matriks adalah transformasi linier yang menghasilkan bayangan atau proyeksi dari suatu objek ke dalam sebuah subruang. Proyeksi dapat terjadi ke dalam dimensi yang lebih rendah (proyeksi ortogonal) atau ke dalam dimensi yang sama (proyeksi non-ortogonal). Proyeksi ortogonal terjadi ketika subruang yang ditentukan tegak lurus terhadap subruang lainnya. Proyeksi mengurangi dimensi vektor dengan memproyeksikannya ke suatu garis atau bidang.</p>
 <p>Jika memiliki proyeksi vektor</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -1041,7 +1084,7 @@ v'=
 <span class="n">Py</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span>
 
 <span class="c1"># Vektor asli</span>
-<span class="n">original_vector</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<span class="n">original_vector</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
 
 <span class="c1"># Menghitung hasil proyeksi ke sumbu x dan sumbu y</span>
 <span class="n">projected_vector_x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">Px</span><span class="p">,</span> <span class="n">original_vector</span><span class="p">)</span>
@@ -1074,7 +1117,7 @@ v'=
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/e22acc681a8ca9d98da66b47ce3d2f4c368387d337bd62ac24e7ee3fcc1fad46.png" src="_images/e22acc681a8ca9d98da66b47ce3d2f4c368387d337bd62ac24e7ee3fcc1fad46.png" />
+<img alt="_images/d98a85c90d5503e32058edccc94a919a81ca8294cad09c38e820f96dccd023ec.png" src="_images/d98a85c90d5503e32058edccc94a919a81ca8294cad09c38e820f96dccd023ec.png" />
 </div>
 </div>
 </section>
@@ -1112,12 +1155,12 @@ v'=
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="determinant.html"
+       href="Eigenvalues_Eigenvectors.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">DETERMINANT</p>
+        <p class="prev-next-title">Eigenvalues dan Eigenvectors</p>
       </div>
     </a>
 </div>
@@ -1151,8 +1194,8 @@ v'=
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#macam-macam-transformasi-linier-pada-matriks">Macam-macam Transformasi Linier pada Matriks</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#refleksi-matriks">Refleksi Matriks</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#refleksi-terhadap-sumbu-y">Refleksi terhadap sumbu y</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#refleksi-terhadap-sumbu-x">Refleksi terhadap sumbu x</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#refleksi-terhadap-sumbu-y">Refleksi terhadap sumbu y</a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rotasi-matriks">Rotasi Matriks</a></li>
