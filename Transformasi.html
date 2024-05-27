@@ -381,7 +381,13 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definisi-transformasi">Definisi Transformasi</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transformasi-linier-dalam-matriks">Transformasi Linier dalam Matriks</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cara-menentukan-transformasi-linier">Cara Menentukan Transformasi Linier</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definisi-transformasi-linier-pada-matriks">Definisi Transformasi Linier pada matriks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sifat-sifat-transformasi-linier">Sifat-sifat Transformasi Linier:</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-transformasi-linier-dalam-matriks">Contoh transformasi linier dalam matriks:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#manfaat-transformasi-linier-dalam-matriks">Manfaat Transformasi Linier dalam Matriks</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cara-menentukan-transformasi-linier">Cara Menentukan Transformasi Linier</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#t-u-v-t-u-t-v">1. T (u + v) = T (u) + T (v)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#t-v-t-v">2. T (αv) = αT (v)</a></li>
 </ul>
@@ -452,14 +458,56 @@ v ∈ −−−−−Transformation−−−−→ w = T (v) ∈ W
 <section id="transformasi-linier-dalam-matriks">
 <h2>Transformasi Linier dalam Matriks<a class="headerlink" href="#transformasi-linier-dalam-matriks" title="Link to this heading">#</a></h2>
 </section>
+<section id="definisi-transformasi-linier-pada-matriks">
+<h2>Definisi Transformasi Linier pada matriks<a class="headerlink" href="#definisi-transformasi-linier-pada-matriks" title="Link to this heading">#</a></h2>
+<p>Transformasi linear pada matriks mengacu pada penggunaan matriks untuk merepresentasikan transformasi linear dari satu ruang ke ruang lain. Transformasi linear adalah fungsi matematika yang mempertahankan sifat struktural ruang vektor, yaitu penjumlahan dan perkalian skalar.</p>
+</section>
+<section id="sifat-sifat-transformasi-linier">
+<h2>Sifat-sifat Transformasi Linier:<a class="headerlink" href="#sifat-sifat-transformasi-linier" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Memelihara asal: Transformasi linier memetakan vektor nol ke vektor nol.</p></li>
+<li><p>Memelihara kombinasi linear: Transformasi linier memetakan kombinasi linear dari vektor-vektor ke kombinasi linear dari bayangan vektor-vektor tersebut.</p></li>
+<li><p>Representasi matriks: cara untuk menggambarkan atau menyajikan sebuah matriks dalam bentuk yang dapat dimengerti. Contohnya :</p>
+<ul>
+<li><p>Notasi Matematika, notasi matematika standar yang menggunakan tanda kurung dan indeks untuk menyatakan elemen-elemennya.</p></li>
+<li><p>Array, struktur data dua dimensi. Setiap elemen dalam array menyimpan nilai dari elemen matriks yang sesuai. Representasi ini sangat umum digunakan dalam komputasi numerik dan ilmu komputer.</p></li>
+<li><p>Visualisasi Grafis, Untuk matriks dengan dimensi yang kecil, terkadang berguna untuk memvisualisasikannya dalam bentuk tabel atau grafik. Ini dapat membantu dalam pemahaman intuitif tentang struktur matriks dan pola data yang terkandung di dalamnya.</p></li>
+<li><p>Matriks Blok, matriks dipecah-pecah. Representasi ini berguna dalam beberapa kasus di mana matriks besar dapat diurai menjadi bagian-bagian yang lebih mudah dikelola.</p></li>
+<li><p>Sparse Matriks Reprentation, Untuk matriks yang memiliki banyak elemen nol, seringkali lebih efisien untuk hanya menyimpan elemen-elemen yang tidak nol dan posisi mereka dalam matriks.</p></li>
+</ul>
+</li>
+</ul>
+<section id="contoh-transformasi-linier-dalam-matriks">
+<h3>Contoh transformasi linier dalam matriks:<a class="headerlink" href="#contoh-transformasi-linier-dalam-matriks" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Rotasi: Memutar vektor di sekitar sumbu tertentu. Matriks rotasi memiliki elemen yang ditentukan oleh sudut rotasi dan sumbu rotasi.</p></li>
+<li><p>Refleksi: Memantulkan vektor di sepanjang garis atau bidang tertentu. Matriks refleksi memiliki elemen yang ditentukan oleh normal garis atau bidang refleksi.</p></li>
+<li><p>Proyeksi: Memproyeksikan vektor ke subruang tertentu. Matriks proyeksi memiliki elemen yang ditentukan oleh basis subruang.</p></li>
+<li><p>Penskalaan: Mengubah skala vektor dengan faktor tertentu. Matriks penskalaan memiliki elemen yang ditentukan oleh faktor skala.</p></li>
+</ul>
+</section>
+</section>
+<section id="manfaat-transformasi-linier-dalam-matriks">
+<h2>Manfaat Transformasi Linier dalam Matriks<a class="headerlink" href="#manfaat-transformasi-linier-dalam-matriks" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Grafika Komputer: Digunakan untuk mengubah posisi, rotasi, dan skala objek dalam grafika komputer.</p></li>
+<li><p>Analisis Data: Memproses data untuk analisis statistik dan pemodelan matematika.</p></li>
+<li><p>Sistem Persamaan Linear: Menyelesaikan sistem persamaan linear dalam aljabar linear.</p></li>
+<li><p>Grafika Vektor: Representasi dan manipulasi objek grafis dalam bentuk vektor.</p></li>
+<li><p>Pengolahan Sinyal: Analisis dan pengolahan sinyal audio, video, atau komunikasi.</p></li>
+<li><p>Analisis Struktural: Perhitungan dan simulasi respons struktural untuk rekayasa.</p></li>
+<li><p>Kompresi Gambar: Mengurangi ukuran file gambar tanpa kehilangan kualitas.</p></li>
+<li><p>Kriptografi: Mengamankan data dengan enkripsi dan dekripsi.</p></li>
+</ul>
 <section id="cara-menentukan-transformasi-linier">
-<h2>Cara Menentukan Transformasi Linier<a class="headerlink" href="#cara-menentukan-transformasi-linier" title="Link to this heading">#</a></h2>
+<h3>Cara Menentukan Transformasi Linier<a class="headerlink" href="#cara-menentukan-transformasi-linier" title="Link to this heading">#</a></h3>
 <p>Dua aturan:</p>
 <ul class="simple">
 <li><p>Pusat titik tidak berubah.</p></li>
 <li><p>Garis lurus ditetapkan sebagai garis lurus.</p></li>
 </ul>
 <p>Secara umum pemetaan T adalah transformasi linier jika :</p>
+</section>
 <section id="t-u-v-t-u-t-v">
 <h3>1. T (u + v) = T (u) + T (v)<a class="headerlink" href="#t-u-v-t-u-t-v" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
@@ -1090,7 +1138,13 @@ v'=
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definisi-transformasi">Definisi Transformasi</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transformasi-linier-dalam-matriks">Transformasi Linier dalam Matriks</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cara-menentukan-transformasi-linier">Cara Menentukan Transformasi Linier</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definisi-transformasi-linier-pada-matriks">Definisi Transformasi Linier pada matriks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sifat-sifat-transformasi-linier">Sifat-sifat Transformasi Linier:</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-transformasi-linier-dalam-matriks">Contoh transformasi linier dalam matriks:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#manfaat-transformasi-linier-dalam-matriks">Manfaat Transformasi Linier dalam Matriks</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cara-menentukan-transformasi-linier">Cara Menentukan Transformasi Linier</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#t-u-v-t-u-t-v">1. T (u + v) = T (u) + T (v)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#t-v-t-v">2. T (αv) = αT (v)</a></li>
 </ul>
