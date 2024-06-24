@@ -579,61 +579,91 @@ A x (Av)=
 <span class="n">previous_result</span> <span class="o">=</span> <span class="n">v</span>
 <span class="n">tolerance</span> <span class="o">=</span> <span class="mf">0.01</span>
 
+<span class="c1"># List untuk menyimpan hasil PageRank dari setiap iterasi</span>
+<span class="n">pagerank_results</span> <span class="o">=</span> <span class="p">[]</span>
+
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">):</span>
     <span class="n">result</span> <span class="o">=</span> <span class="n">A</span> <span class="o">@</span> <span class="n">previous_result</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;(A^</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">)v = </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
+    <span class="n">pagerank_results</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">flatten</span><span class="p">())</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Iterasi ke-</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">:&quot;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">node</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">result</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Node </span><span class="si">{</span><span class="n">node</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">value</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span> <span class="p">)</span>
     <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">result</span> <span class="o">-</span> <span class="n">previous_result</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="n">tolerance</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">((</span><span class="n">result</span> <span class="o">-</span> <span class="n">previous_result</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">))</span> <span class="o">&lt;</span> <span class="n">tolerance</span><span class="p">:</span>
-          <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Perkalian matriks konvergen pada iterasi ke-</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
-          <span class="k">break</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Perkalian matriks konvergen pada iterasi ke-</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+            <span class="k">break</span>
 
     <span class="n">previous_result</span> <span class="o">=</span> <span class="n">result</span>
+
+<span class="c1"># Setelah loop selesai, mengurutkan hasil PageRank dari tertinggi ke terendah</span>
+<span class="n">final_pageranks</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">pagerank_results</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>  <span class="c1"># Mengambil hasil dari iterasi terakhir</span>
+<span class="n">sorted_indices</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">final_pageranks</span><span class="p">)[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>  <span class="c1"># Mengurutkan indeks dari nilai tertinggi ke terendah</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Hasil PageRank setelah konvergensi (dari tertinggi ke terendah):&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">rank</span><span class="p">,</span> <span class="n">idx</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">sorted_indices</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Rank </span><span class="si">{</span><span class="n">rank</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2">: Node </span><span class="si">{</span><span class="n">idx</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2"> dengan nilai </span><span class="si">{</span><span class="n">final_pageranks</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(A^1)v = 
- [[0.375     ]
- [0.06666667]
- [0.34166667]
- [0.21666667]]
-(A^2)v = 
- [[0.45      ]
- [0.125     ]
- [0.26666667]
- [0.15833333]]
-(A^3)v = 
- [[0.34583333]
- [0.15      ]
- [0.29166667]
- [0.2125    ]]
-(A^4)v = 
- [[0.39791667]
- [0.11527778]
- [0.29652778]
- [0.19027778]]
-(A^5)v = 
- [[0.39166667]
- [0.13263889]
- [0.28541667]
- [0.19027778]]
-(A^6)v = 
- [[0.38055556]
- [0.13055556]
- [0.29201389]
- [0.196875  ]]
-(A^7)v = 
- [[0.39045139]
- [0.12685185]
- [0.29056713]
- [0.19212963]]
-(A^8)v = 
- [[0.38663194]
- [0.13015046]
- [0.2896412 ]
- [0.19357639]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Iterasi ke-1:
+Node 1: 0.375
+Node 2: 0.06666666666666667
+Node 3: 0.3416666666666667
+Node 4: 0.21666666666666667
+
+Iterasi ke-2:
+Node 1: 0.45
+Node 2: 0.125
+Node 3: 0.26666666666666666
+Node 4: 0.15833333333333333
+
+Iterasi ke-3:
+Node 1: 0.3458333333333333
+Node 2: 0.15
+Node 3: 0.29166666666666663
+Node 4: 0.2125
+
+Iterasi ke-4:
+Node 1: 0.39791666666666664
+Node 2: 0.11527777777777777
+Node 3: 0.2965277777777778
+Node 4: 0.19027777777777777
+
+Iterasi ke-5:
+Node 1: 0.39166666666666666
+Node 2: 0.13263888888888886
+Node 3: 0.28541666666666665
+Node 4: 0.19027777777777774
+
+Iterasi ke-6:
+Node 1: 0.38055555555555554
+Node 2: 0.13055555555555554
+Node 3: 0.29201388888888885
+Node 4: 0.19687499999999997
+
+Iterasi ke-7:
+Node 1: 0.39045138888888886
+Node 2: 0.12685185185185183
+Node 3: 0.2905671296296296
+Node 4: 0.1921296296296296
+
+Iterasi ke-8:
+Node 1: 0.3866319444444444
+Node 2: 0.13015046296296295
+Node 3: 0.28964120370370366
+Node 4: 0.19357638888888887
+
 
 Perkalian matriks konvergen pada iterasi ke-8.
+
+Hasil PageRank setelah konvergensi (dari tertinggi ke terendah):
+Rank 1: Node 1 dengan nilai 0.3866319444444444
+Rank 2: Node 3 dengan nilai 0.28964120370370366
+Rank 3: Node 4 dengan nilai 0.19357638888888887
+Rank 4: Node 2 dengan nilai 0.13015046296296295
 </pre></div>
 </div>
 </div>
@@ -681,6 +711,30 @@ Perkalian matriks konvergen pada iterasi ke-8.
 </li>
 <li><p>‘previous_result = result’</p>
 <p>-&gt; previous_result diperbarui dengan result untuk digunakan dalam iterasi berikutnya.</p>
+</li>
+<li><p>‘final_pageranks = np.array(pagerank_results[-1])’</p>
+<p>-&gt; Baris ini mengambil hasil PageRank dari iterasi terakhir.</p>
+<p>-&gt; pagerank_results adalah daftar yang menyimpan hasil dari setiap iterasi.</p>
+<p>-&gt; pagerank_results[-1] mengambil elemen terakhir dari daftar tersebut, yang merupakan hasil setelah algoritma PageRank mencapai konvergensi.</p>
+<p>-&gt; np.array(…) mengonversi hasil tersebut menjadi array NumPy untuk memudahkan operasi selanjutnya.</p>
+</li>
+<li><p>‘sorted_indices = np.argsort(final_pageranks)[::-1]’</p>
+<p>-&gt; Baris ini mengurutkan indeks berdasarkan nilai PageRank dari yang tertinggi ke terendah.</p>
+<p>-&gt; np.argsort(final_pageranks) mengembalikan array dari indeks yang mengurutkan final_pageranks dalam urutan naik.</p>
+<p>-&gt; [::-1] membalik urutan array tersebut sehingga menjadi urutan turun (dari nilai tertinggi ke terendah).</p>
+</li>
+<li><p>‘print(“\nHasil PageRank setelah konvergensi (dari tertinggi ke terendah):”)’</p>
+<p>-&gt; Baris ini mencetak judul yang menjelaskan bahwa hasil yang ditampilkan adalah PageRank setelah konvergensi dan diurutkan dari nilai tertinggi ke terendah.</p>
+</li>
+<li><p>‘for rank, idx in enumerate(sorted_indices):’</p>
+<p>-&gt; Loop ini mengiterasi melalui sorted_indices, di mana rank adalah peringkat (dari 0 hingga n-1) dan idx adalah indeks node sesuai dengan urutan PageRank yang diurutkan.</p>
+<p>-&gt; enumerate(sorted_indices) memberikan pasangan (rank, idx) di mana rank adalah indeks urutan dari 0 ke n-1 dan idx adalah indeks node sesuai urutan nilai PageRank.</p>
+</li>
+<li><p>‘print(f”Rank {rank+1}: Node {idx+1} dengan nilai {final_pageranks[idx]}”)’</p>
+<p>-&gt; Baris ini mencetak peringkat, nomor node, dan nilai PageRank dari setiap node.</p>
+<p>-&gt; rank+1 digunakan untuk menampilkan peringkat mulai dari 1 (bukan 0).</p>
+<p>-&gt; idx+1 digunakan untuk menampilkan nomor node mulai dari 1 (bukan 0), asumsi bahwa nomor node dalam graf mulai dari 1.</p>
+<p>-&gt;final_pageranks[idx] memberikan nilai PageRank untuk node dengan indeks idx.</p>
 </li>
 </ul>
 <p>KESIMPULAN DARI KESELURUHAN CODE INI ADALAH:</p>
